@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>O fundacji — The Conscious Human</title>
+  <meta name="description" content="The Conscious Human to fundacja, która pomaga ludziom lepiej rozumieć siebie, budować odporność psychiczną i świadomie korzystać z technologii.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── People grid ── */
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 48px;
+    }
+    .people-section-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 22px;
+      color: var(--primary);
+      margin: 0 0 32px;
+    }
+    .people-section-title + .people-grid { margin-bottom: 88px; }
+
+    .person-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-width: 0;
+    }
+    .person-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .person-photo {
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(26,61,43,0.12);
+      background: #eee8dd;
+      flex: 0 0 auto;
+    }
+    .person-name {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+      color: var(--primary);
+      margin: 0;
+    }
+    .person-role {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--terra);
+      margin: 2px 0 0;
+    }
+    .person-bio {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--ink-mute);
+      margin: 0;
+    }
+
+    /* ── KRS table ── */
+    .krs-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .krs-row:last-child { border-bottom: none; }
+    .krs-label {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #9a948c;
+    }
+    .krs-value {
+      font-size: 17px;
+      color: var(--ink);
+      text-align: right;
+    }
+    .krs-value a {
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── Contact closing (dark band) ── */
+    .contact-band {
+      padding: 112px 40px;
+      background:
+        radial-gradient(ellipse 55% 80% at 80% 50%, rgba(42,92,64,0.5) 0%, transparent 65%),
+        radial-gradient(ellipse 35% 55% at 10% 30%, rgba(61,31,92,0.3) 0%, transparent 60%),
+        var(--primary);
+      text-align: center;
+    }
+    .contact-band__inner { max-width: 680px; margin: 0 auto; }
+    .contact-band__h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(32px, 4.4vw, 50px);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin: 0;
+    }
+    .contact-band__h2 em { color: var(--violet-mute); }
+    .contact-band__sub {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--on-primary-mute);
+      margin: 24px auto 40px;
+      max-width: 520px;
+    }
+
+    /* ── About page hero ── */
+    .about-hero {
+      padding: 96px 0 88px;
+      background:
+        radial-gradient(ellipse 55% 65% at 78% 35%, rgba(238,243,238,0.95) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 45% at 15% 75%, rgba(61,31,92,0.07) 0%, transparent 60%),
+        var(--canvas-cream);
+    }
+    .about-hero__inner { max-width: 760px; }
+
+    @media (max-width: 900px) {
+      .people-grid { grid-template-columns: 1fr; }
+      .contact-band { padding: 80px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="wrap nav__inner">
+      <a href="index.html" class="nav__logo">The <em>Conscious</em> Human</a>
+      <div class="nav__links">
+        <a href="index.html#o-fundacji" class="nav__link">O fundacji</a>
+        <a href="index.html#projekty" class="nav__link">Projekty</a>
+        <a href="index.html#jak-dzialamy" class="nav__link">Jak działamy</a>
+        <a href="index.html#kontakt" class="nav__link">Kontakt</a>
+      </div>
+      <a href="index.html#kontakt" class="btn btn--nav">Kontakt</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="about-hero">
+    <div class="wrap about-hero__inner">
+      <span class="eyebrow">O fundacji</span>
+      <h1 class="hero__h1" style="margin-top: 18px;">Najważniejszą kompetencją XXI wieku jest <em>świadomość</em>.</h1>
+      <p class="body-lg" style="max-width: 560px; margin-top: 24px;">The Conscious Human to fundacja, która pomaga ludziom lepiej rozumieć siebie, budować odporność psychiczną i świadomie korzystać z technologii.</p>
+    </div>
+  </header>
+
+  <!-- Nasza misja -->
+  <section class="section section--white">
+    <div class="wrap section__grid2 section__grid2--about">
+      <div class="about__header">
+        <span class="eyebrow">Nasza misja</span>
+        <h2 class="h2" style="margin-top: 18px;">Zmiana zaczyna się od nas <em>samych</em>.</h2>
+      </div>
+      <div class="about__body">
+        <p class="body-lg">Fundacja The Conscious Human powstała z jednego przekonania: najważniejszą kompetencją naszych czasów jest świadomość.</p>
+        <p class="body-lg">Żyjemy w świecie, który daje nam więcej możliwości niż kiedykolwiek — a jednocześnie sprawia, że coraz więcej osób czuje się zagubionych, przeciążonych i oderwanych od samych siebie. Wierzymy, że odpowiedzią nie jest kolejna technologia ani kolejna porcja informacji, lecz głębsze rozumienie siebie.</p>
+        <p class="body-lg">Naszą misją jest pomaganie ludziom w rozwijaniu świadomości — po to, by lepiej rozumieli siebie, budowali odporność psychiczną i świadomie korzystali z technologii, zamiast dać się jej prowadzić.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jak działamy -->
+  <section class="section section--cream">
+    <div class="wrap">
+      <div class="section__intro">
+        <span class="eyebrow">Jak działamy</span>
+        <h2 class="h2" style="margin-top: 16px;">Praktyka oparta na sprawdzonych <em>metodach</em>.</h2>
+      </div>
+      <div class="cards">
+        <div class="card card--plain">
+          <span class="card__eyebrow">Rzetelne podstawy</span>
+          <p class="card__body">Łączymy wiedzę z psychologii, zdrowia i nauki z realiami nowych technologii — bez uproszczeń i modnych skrótów.</p>
+        </div>
+        <div class="card card--violet">
+          <span class="card__eyebrow">Standard coachingowy</span>
+          <p class="card__body">Współpracujemy z coachami, którzy ukończyli program coachingowy akredytowany przez International Coaching Federation (ICF).</p>
+        </div>
+        <div class="card card--plain">
+          <span class="card__eyebrow">Mierzalny efekt</span>
+          <p class="card__body">Projektujemy programy i materiały tak, by przekładały się na konkretne zmiany w codziennym życiu odbiorców.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ludzie Fundacji -->
+  <section id="ludzie" class="section section--white">
+    <div class="wrap">
+      <div class="section__intro">
+        <span class="eyebrow">Ludzie Fundacji</span>
+        <h2 class="h2" style="margin-top: 16px;">Zespół, który łączy świadomość i <em>kompetencje</em>.</h2>
+      </div>
+
+      <h3 class="people-section-title">Zarząd i Rada Fundacji</h3>
+      <div class="people-grid" style="margin-bottom: 88px;">
+        <div class="person-card">
+          <div class="person-header">
+            <img class="person-photo" src="Aga nieb.jpg" alt="Aga Skraburska" style="object-position: center 10%;">
+            <div>
+              <p class="person-name">Aga Skraburska</p>
+              <p class="person-role">Fundatorka i Prezeska Zarządu</p>
+            </div>
+          </div>
+          <p class="person-bio">Coach, trenerka i konsultantka organizacyjna z ponad 18-letnim doświadczeniem w prowadzeniu globalnych programów edukacyjnych i rozwojowych — m.in. w ABB, UBS i Nexthink. Absolwentka akredytowanego przez ICF programu coachingowego oraz Szkoły Coachów Systemowo-Psychodynamicznych. Do Fundacji wnosi wizję, kierunek strategiczny i doświadczenie w projektowaniu programów rozwojowych, które realnie zmieniają sposób, w jaki ludzie myślą o sobie i swojej pracy.</p>
+        </div>
+        <div class="person-card">
+          <div class="person-header">
+            <img class="person-photo" src="Lukasz Grzesik.jpeg" alt="Łukasz Grzesik">
+            <div>
+              <p class="person-name">Łukasz Grzesik</p>
+              <p class="person-role">Przewodniczący Rady Fundacji</p>
+            </div>
+          </div>
+          <p class="person-bio">Inżynier oprogramowania w Nexthink (Szwajcaria), gdzie pełni role Senior Software Engineera, Scrum Mastera i Security Championa. Absolwent Politechniki Śląskiej oraz studiów z zarządzania projektami na AGH. Do Rady wnosi perspektywę technologiczną i doświadczenie w zwinnym prowadzeniu projektów — wspiera Fundację w budowaniu narzędzi cyfrowych oraz dba o ich jakość i bezpieczeństwo.</p>
+        </div>
+        <div class="person-card">
+          <div class="person-header">
+            <img class="person-photo" src="Grzegorz Skraburski.jpg" alt="Grzegorz Skraburski" style="object-position: center 10%;">
+            <div>
+              <p class="person-name">Grzegorz Skraburski</p>
+              <p class="person-role">Członek Rady Fundacji</p>
+            </div>
+          </div>
+          <p class="person-bio">Adwokat przy Okręgowej Radzie Adwokackiej w Katowicach, prowadzący własną kancelarię. Ma kilkanaście lat praktyki w sprawach cywilnych, karnych i administracyjnych oraz w obsłudze prawnej spółek. W Radzie czuwa nad zgodnością działań ze statutem i przepisami prawa oraz wspiera bezpieczeństwo prawne projektów.</p>
+        </div>
+        <div class="person-card">
+          <div class="person-header">
+            <img class="person-photo" src="Alicja Skraburska.jpeg" alt="Alicja Skraburska">
+            <div>
+              <p class="person-name">Alicja Skraburska</p>
+              <p class="person-role">Członkini Rady Fundacji</p>
+            </div>
+          </div>
+          <p class="person-bio">Executive w obszarze cyberbezpieczeństwa, prelegentka i wykładowczyni. Obecnie pełni rolę Global Head of Security Operations and Response w Asana oraz wykłada na Uniwersytecie Andrzeja Frycza Modrzewskiego w Krakowie. Do Rady wnosi kompetencje w zakresie bezpieczeństwa informacji i odpowiedzialnego, świadomego korzystania z nowoczesnych technologii.</p>
+        </div>
+      </div>
+
+      <h3 class="people-section-title">Coachowie i eksperci współpracujący z Fundacją</h3>
+      <div class="people-grid" style="margin-bottom: 88px;">
+        <div class="person-card">
+          <div class="person-header">
+            <img class="person-photo" src="Magda Maliszewska.png" alt="Magdalena Maliszewska">
+            <div>
+              <p class="person-name">Magdalena Maliszewska</p>
+              <p class="person-role">Coach · Doradczyni</p>
+            </div>
+          </div>
+          <p class="person-bio">Świecka misjonarka pracująca od lat wśród społeczności Inuitów w kanadyjskiej Arktyce (rejon Whale Cove, diecezja Churchill–Hudson Bay), gdzie prowadzi warsztaty i pracę wspólnotową w wymagających warunkach Dalekiej Północy. Absolwentka akredytowanego przez ICF programu coachingowego. Do Fundacji wnosi wyjątkową wrażliwość międzykulturową i doświadczenie pracy z ludźmi w kryzysie i izolacji — perspektywę, która pomaga nam projektować działania dla osób w bardzo różnych sytuacjach życiowych.</p>
+        </div>
+        <div class="person-card">
+          <div class="person-header">
+            <img class="person-photo" src="Zaneta Piwka.jpeg" alt="Żaneta Piwka">
+            <div>
+              <p class="person-name">Żaneta Piwka</p>
+              <p class="person-role">Coach · Trenerka · Przedsiębiorczyni</p>
+            </div>
+          </div>
+          <p class="person-bio">Coach i trenerka wspierająca rozwój ludzi i organizacji, organizację pracy i zarządzanie czasem. Absolwentka akredytowanego przez ICF programu coachingowego. Przedsiębiorczyni — współprowadzi firmę z branży budowlanej i własną działalność w obszarze social mediów. Doświadczenie zdobywała także w administracji publicznej i projektach społecznych. W pracy stawia na uważność, autentyczność i partnerskie relacje. Do Fundacji wnosi perspektywę praktyka biznesu oraz umiejętność łączenia świata publicznego, społecznego i przedsiębiorczego — a także kompetencje w komunikacji i budowaniu obecności Fundacji w mediach społecznościowych.</p>
+        </div>
+        <div class="person-card">
+          <div class="person-header">
+            <img class="person-photo" src="Maciej Rogacki.jpeg" alt="Maciej Rogacki">
+            <div>
+              <p class="person-name">Maciej Rogacki</p>
+              <p class="person-role">Coach · Konsultant</p>
+            </div>
+          </div>
+          <p class="person-bio">Coach pracujący w nurcie transformacyjnym Marcii Reynolds (autorki metody „Coach the Person, Not the Problem"), skoncentrowanym na głębokiej rozmowie i realnej zmianie. Absolwent akredytowanego przez ICF programu coachingowego. Doskonale rozumie procesy decyzyjne, pracę z ryzykiem, niepewnością i emocjami pod presją. Do Fundacji wnosi głęboką praktykę pracy z przekonaniami i wspiera odbiorców w podejmowaniu świadomych decyzji tam, gdzie brakuje pewnych odpowiedzi.</p>
+        </div>
+      </div>
+
+      <h3 class="people-section-title">Zespół projektowo-kreatywny</h3>
+      <div class="people-grid">
+        <div class="person-card">
+          <div class="person-header">
+            <img class="person-photo" src="Wiktoria Kowaliczek.jpeg" alt="Wiktoria Kowaliczek">
+            <div>
+              <p class="person-name">Wiktoria Kowaliczek</p>
+              <p class="person-role">Architektka projektów rozwojowych</p>
+            </div>
+          </div>
+          <p class="person-bio">Instructional designerka i specjalistka e-learningu. Absolwentka AGH na kierunku edukacja techniczno-informatyczna z ponad 4-letnią praktyką w Transition Technologies Managed Services, gdzie projektuje i tworzy profesjonalne szkolenia online. Do Fundacji wnosi metodykę projektowania edukacji i warsztat produkcyjny: przekłada nasze treści merytoryczne na angażujące programy i materiały, dbając o to, by wiedza realnie zmieniała praktykę odbiorców, a nie kończyła się na teorii.</p>
+        </div>
+        <div class="person-card">
+          <div class="person-header">
+            <img class="person-photo" src="Adam Grzesik.png" alt="Adam Grzesik">
+            <div>
+              <p class="person-name">Adam Grzesik</p>
+              <p class="person-role">Graphic Designer</p>
+            </div>
+          </div>
+          <p class="person-bio">Absolwent Collège Villamont w Lozannie, obecnie uczy się na profilu matematyczno-fizycznym w Gymnase de Chamblandes w Pully (Szwajcaria). Interesuje się rysunkiem, projektowaniem graficznym i projektowaniem gier. Do Fundacji wnosi świeże spojrzenie młodego pokolenia i dba o spójną, przemyślaną identyfikację wizualną — tak, by nasze materiały były czytelne i przyciągały uwagę odbiorców.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparentność -->
+  <section id="transparentnosc" class="section section--sage">
+    <div class="wrap section__grid2 section__grid2--about">
+      <div class="about__header">
+        <span class="eyebrow">Transparentność</span>
+        <h2 class="h2" style="margin-top: 18px;">Jawność, która buduje <em>zaufanie</em>.</h2>
+        <p class="body-lg" style="margin-top: 24px;">Fundacja The Conscious Human jest zarejestrowana w Krajowym Rejestrze Sądowym pod numerem 0001222166. Udostępniamy pełne dane rejestrowe oraz dokumenty organizacji.</p>
+      </div>
+      <div>
+        <div class="krs-row"><span class="krs-label">KRS</span><span class="krs-value">0001222166</span></div>
+        <div class="krs-row"><span class="krs-label">NIP</span><span class="krs-value">9542903039</span></div>
+        <div class="krs-row"><span class="krs-label">REGON</span><span class="krs-value">543951195</span></div>
+        <div class="krs-row"><span class="krs-label">Forma prawna</span><span class="krs-value">Fundacja</span></div>
+        <div class="krs-row"><span class="krs-label">Data rejestracji</span><span class="krs-value">10 lutego 2026 r.</span></div>
+        <div class="krs-row"><span class="krs-label">Siedziba</span><span class="krs-value">Brzozowa 42/7, Katowice</span></div>
+        <div class="krs-row"><span class="krs-label">Dokument</span><span class="krs-value"><a href="statut-fundacji.pdf" target="_blank">Statut Fundacji (PDF)</a></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <div class="contact-band">
+    <div class="contact-band__inner">
+      <h2 class="contact-band__h2">Porozmawiajmy o <em>współpracy</em>.</h2>
+      <p class="contact-band__sub">Jesteśmy otwarci na partnerstwa, projekty grantowe i wspólne inicjatywy na rzecz świadomości, zdrowia psychicznego i odpowiedzialnej technologii.</p>
+      <a href="index.html#kontakt" class="btn btn--primary">Skontaktuj się</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="kontakt" class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">The <em>Conscious</em> Human</span>
+        <p class="footer__note"><a href="statut-fundacji.pdf" target="_blank">Statut Fundacji</a></p>
+      </div>
+      <div class="footer__contact">
+        <span class="footer__label">Kontakt</span>
+        <span>ul. Brzozowa 42/7, 40-170 Katowice</span>
+        <a href="mailto:info@conscioushuman.pl">info@conscioushuman.pl</a>
+        <a href="tel:+48693331071">+48 693 331 071</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
