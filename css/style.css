@@ -565,6 +565,26 @@ em {
   text-underline-offset: 3px;
 }
 
+/* ── Language switcher ── */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.lang-switch__item {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+.lang-switch__item:hover { color: var(--primary); }
+.lang-switch__item--active { color: var(--primary); cursor: default; }
+.lang-switch__sep { font-size: 13px; color: var(--hairline); }
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
   :root { --container-pad: 24px; }
