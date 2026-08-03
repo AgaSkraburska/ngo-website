@@ -37,12 +37,8 @@
 
 html { scroll-behavior: smooth; }
 
-/* Disable Fraunces WONK axis — prevents intentionally crooked glyphs (j, i, f, w) */
-.nav__logo, .h2, .hero__h1, .lead, .about__quote, .founder__quote,
-.founder__name, .closing__h2, .footer__logo, .card__eyebrow,
-.how__num, .people-section-title, .person-name, .contact-band__h2 {
-  font-variation-settings: 'WONK' 0;
-}
+/* Disable Fraunces WONK axis globally — prevents crooked glyphs (j, i, f, w) */
+* { font-variation-settings: 'WONK' 0; }
 
 body {
   font-family: var(--font-body);
