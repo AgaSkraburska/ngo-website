@@ -23,7 +23,7 @@
   --ink-mute:       #5a5a54;
   --hairline:       #ddd8d0;
 
-  --font-display:   'Fraunces', Georgia, serif;
+  --font-display:   'Newsreader', Georgia, serif;
   --font-body:      'Hanken Grotesk', system-ui, sans-serif;
 
   --nav-height:     64px;
@@ -37,8 +37,6 @@
 
 html { scroll-behavior: smooth; }
 
-/* Disable Fraunces WONK axis globally — prevents crooked glyphs (j, i, f, w) */
-* { font-variation-settings: 'WONK' 0; }
 
 body {
   font-family: var(--font-body);
