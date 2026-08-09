@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Programs — The Conscious Human</title>
+  <meta name="description" content="Free workshop programs from The Conscious Human: burnout and stress prevention, skills for the AI era, and circles for women and men.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    /* ── Programs hero ── */
+    .programs-hero {
+      padding: 96px 0 80px;
+      background:
+        radial-gradient(ellipse 55% 65% at 78% 35%, rgba(238,243,238,0.95) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 45% at 15% 75%, rgba(61,31,92,0.07) 0%, transparent 60%),
+        var(--canvas-cream);
+    }
+    .programs-hero__inner { max-width: 780px; }
+
+    /* ── Lead grid (text + stats visual) ── */
+    .lead-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    /* ── Lead block (stats text) ── */
+    .lead-block {
+      border-left: 3px solid var(--terra);
+      padding-left: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .lead-block p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--ink-mute);
+    }
+    .lead-block p strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .lead-block a {
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── Stats visual ── */
+    .stats-visual {
+      background: var(--canvas-sage);
+      border-radius: 24px;
+      padding: 44px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .stats-visual__group {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .stats-visual__group-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 2px;
+    }
+    .stats-visual__row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .stats-visual__num {
+      font-family: var(--font-display);
+      font-size: 34px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+      min-width: 92px;
+    }
+    .stats-visual__num--terra { color: var(--terra); }
+    .stats-visual__num--violet { color: var(--violet); }
+    .stats-visual__label {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--ink-mute);
+    }
+    .stats-visual__divider {
+      height: 1px;
+      background: var(--hairline);
+    }
+
+    /* ── Quote block ── */
+    .quote-block { max-width: 720px; }
+    .quote-block__text {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(22px, 2.4vw, 30px);
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      color: var(--violet);
+    }
+    .quote-block__attr {
+      margin-top: 20px;
+      font-size: 15px;
+      color: var(--ink-mute);
+    }
+
+    /* ── Contact band ── */
+    .contact-band {
+      padding: 112px 40px;
+      background:
+        radial-gradient(ellipse 55% 80% at 80% 50%, rgba(42,92,64,0.5) 0%, transparent 65%),
+        radial-gradient(ellipse 35% 55% at 10% 30%, rgba(61,31,92,0.3) 0%, transparent 60%),
+        var(--primary);
+      text-align: center;
+    }
+    .contact-band__inner { max-width: 680px; margin: 0 auto; }
+    .contact-band__h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(32px, 4.4vw, 50px);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin: 0;
+    }
+    .contact-band__sub {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--on-primary-mute);
+      margin: 24px auto 40px;
+      max-width: 520px;
+    }
+    .contact-band__note {
+      margin-top: 28px;
+      font-size: 15px;
+      color: var(--on-primary-mute);
+    }
+    .contact-band__note a {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .contact-band { padding: 80px 24px; }
+      .lead-grid { grid-template-columns: 1fr; gap: 40px; }
+      .stats-visual { padding: 32px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="wrap nav__inner">
+      <a href="/en/" class="nav__logo">The <em>Conscious</em> Human</a>
+      <div class="nav__links">
+        <a href="/en/#about" class="nav__link">About</a>
+        <a href="/en/programs/" class="nav__link">Programs</a>
+        <a href="/en/#how-we-work" class="nav__link">How we work</a>
+        <a href="/en/#contact" class="nav__link">Contact</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div class="lang-switch">
+          <a href="/programy/" class="lang-switch__item">PL</a>
+          <span class="lang-switch__sep">·</span>
+          <span class="lang-switch__item lang-switch__item--active">EN</span>
+        </div>
+        <a href="/en/#contact" class="btn btn--nav">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="programs-hero">
+    <div class="wrap programs-hero__inner">
+      <span class="eyebrow">What we do</span>
+      <h1 class="hero__h1" style="margin-top: 18px;">Awareness changes everything. But only when it's a <em>practice</em>.</h1>
+    </div>
+  </header>
+
+  <!-- Lead / data -->
+  <section class="section section--white">
+    <div class="wrap">
+      <div class="lead-grid">
+        <div class="lead-block">
+          <p>78.3% of working-age Poles report at least one of fourteen burnout symptoms, according to <a href="https://forsal.pl/lifestyle/psychologia/artykuly/9667135,wypalenie-zawodowe-u-polakow-porazajace-dane-z-rynku-pracy.html" target="_blank" rel="noopener">UCE RESEARCH and ePsycholodzy.pl</a>. The most common is prolonged fatigue that doesn't go away with rest. It's reported by 43.4% of respondents.</p>
+          <p>On top of that, there's a new source of tension. According to a <a href="https://www.nask.pl/magazyn/generatywna-sztuczna-inteligencja-a-polski-rynek-pracy" target="_blank" rel="noopener">2025 NASK report</a>, around 5.08 million jobs in Poland — 30.3% of all positions — are vulnerable to changes driven by artificial intelligence (AI). Among office workers, that figure reaches 71.2%.</p>
+          <p>Behind these numbers are everyday experiences: evenings spent thinking about work, mornings without energy, trouble sleeping and digesting, and the sense that life is happening somewhere just out of reach.</p>
+          <p><strong>The Conscious Human Foundation runs free workshops for people who want to deal with the stress of work, personal life, and a world that's changing fast in the age of AI.</strong></p>
+        </div>
+        <div class="stats-visual" aria-hidden="true">
+          <div class="stats-visual__group">
+            <span class="stats-visual__group-label">Burnout</span>
+            <div class="stats-visual__row">
+              <span class="stats-visual__num stats-visual__num--terra">78.3%</span>
+              <span class="stats-visual__label">of working-age Poles report a burnout symptom</span>
+            </div>
+            <div class="stats-visual__row">
+              <span class="stats-visual__num stats-visual__num--terra">43.4%</span>
+              <span class="stats-visual__label">report prolonged fatigue despite rest</span>
+            </div>
+          </div>
+          <div class="stats-visual__divider"></div>
+          <div class="stats-visual__group">
+            <span class="stats-visual__group-label">Artificial intelligence</span>
+            <div class="stats-visual__row">
+              <span class="stats-visual__num stats-visual__num--violet">30.3%</span>
+              <span class="stats-visual__label">of jobs vulnerable to AI-driven change</span>
+            </div>
+            <div class="stats-visual__row">
+              <span class="stats-visual__num stats-visual__num--violet">71.2%</span>
+              <span class="stats-visual__label">among office workers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program tiles -->
+  <section class="section section--cream">
+    <div class="wrap">
+      <div class="section__intro">
+        <span class="eyebrow">Our programs</span>
+        <h2 class="h2" style="margin-top: 16px;">Choose the topic that speaks to you most today.</h2>
+      </div>
+      <div class="cards">
+        <a href="maybe-less-stress/" class="card card--plain">
+          <span class="card__eyebrow">MayBe Less Stress</span>
+          <p class="card__body">We help people better understand stress, restore balance and strengthen mental and physical health.</p>
+          <span class="card__cta">See the program →</span>
+        </a>
+        <a href="unreplaced/" class="card card--violet">
+          <span class="card__eyebrow">Unreplaced</span>
+          <p class="card__body">We develop skills that AI cannot replace, and teach people to use artificial intelligence mindfully.</p>
+          <span class="card__cta">See the program →</span>
+        </a>
+        <div id="together" class="card card--plain">
+          <span class="card__eyebrow">Together</span>
+          <p class="card__body">We create space for dialogue, building relationships and better understanding one another.</p>
+          <span class="card__cta">In the works</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder's quote -->
+  <section class="section section--sage">
+    <div class="wrap section__grid2 section__grid2--founder">
+      <div class="founder__photo-wrap">
+        <img src="../../Aga zielony.jpg" alt="Aga Skraburska" class="founder__photo" loading="lazy">
+      </div>
+      <div class="quote-block">
+        <p class="quote-block__text">"For years I worked in corporations in Poland, and now in Switzerland, and I know what living under constant tension feels like from the inside, not from research. I learned one thing: no one changes because they were handed a list of tips. People change when someone is there to see it happen. That's why our programs are small and run live."</p>
+        <p class="quote-block__attr">— Aga Skraburska, Founder and Board President of The Conscious Human Foundation</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three principles -->
+  <section class="section section--white">
+    <div class="wrap">
+      <div class="section__intro">
+        <span class="eyebrow">How we work</span>
+        <h2 class="h2" style="margin-top: 16px;">Methods that actually work.</h2>
+      </div>
+      <div class="cards">
+        <div class="card card--plain">
+          <span class="card__eyebrow">We name what's invisible</span>
+          <p class="card__body">The problem you arrive with is rarely the real one. We start by understanding it, not by fixing it.</p>
+        </div>
+        <div class="card card--violet">
+          <span class="card__eyebrow">We work individually and in small groups</span>
+          <p class="card__body">It's easier to change habits together than when we try to change our behaviour alone.</p>
+        </div>
+        <div class="card card--plain">
+          <span class="card__eyebrow">We give tools, not prescriptions</span>
+          <p class="card__body">We don't have five rules for a happy life. We have tools that work, if you put them into practice with our help.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <div class="contact-band">
+    <div class="contact-band__inner">
+      <h2 class="contact-band__h2">Start with one cycle.</h2>
+      <p class="contact-band__sub">You don't have to know right away which program is right for you. Pick the topic that speaks to you most today, and come to the first session.</p>
+      <a href="mailto:info@conscioushuman.pl" class="btn btn--primary">Ask about the next round →</a>
+      <p class="contact-band__note">Questions? Write to us: <a href="mailto:info@conscioushuman.pl">info@conscioushuman.pl</a></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">The <em>Conscious</em> Human</span>
+        <p class="footer__note"><a href="../../statut-fundacji.pdf" target="_blank">Foundation Statute</a></p>
+      </div>
+      <div class="footer__contact">
+        <span class="footer__label">Contact</span>
+        <span>ul. Brzozowa 42/7, 40-170 Katowice, Poland</span>
+        <a href="mailto:info@conscioushuman.pl">info@conscioushuman.pl</a>
+        <a href="tel:+48693331071">+48 693 331 071</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

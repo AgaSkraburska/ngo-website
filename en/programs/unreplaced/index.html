@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unreplaced — Programs — The Conscious Human</title>
+  <meta name="description" content="A free 8-session workshop cycle building skills for the AI era. Groups of up to 12, sessions every two weeks.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    /* ── Program hero ── */
+    .programs-hero {
+      padding: 96px 0 72px;
+      background:
+        radial-gradient(ellipse 55% 65% at 78% 35%, rgba(238,243,238,0.95) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 45% at 15% 75%, rgba(61,31,92,0.07) 0%, transparent 60%),
+        var(--canvas-cream);
+    }
+    .programs-hero__grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .programs-hero__photo {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--elev-3);
+      aspect-ratio: 1 / 1;
+    }
+    .programs-hero__photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* ── Who it's for grid ── */
+    .dla-kogo-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    /* ── Format box ── */
+    .format-box {
+      background: var(--canvas-sage);
+      border-radius: 20px;
+      padding: 40px 44px;
+    }
+    .format-box__list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 24px;
+    }
+    .format-box__list li {
+      font-size: 15px;
+      color: var(--ink-mute);
+      padding-left: 20px;
+      position: relative;
+    }
+    .format-box__list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--terra);
+    }
+
+    /* ── Quote block ── */
+    .quote-block { max-width: 720px; margin: 0 auto; text-align: center; }
+    .quote-block__text {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(22px, 2.4vw, 30px);
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      color: var(--violet);
+    }
+    .quote-block__attr-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .quote-block__attr {
+      font-size: 15px;
+      color: var(--ink-mute);
+    }
+    .quote-block__avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* ── Data block ── */
+    .data-block {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 720px;
+    }
+    .data-block p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--ink-mute);
+    }
+    .data-block a {
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── Session list ── */
+    .session {
+      display: flex;
+      gap: 28px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .session:first-child { border-top: 1px solid var(--hairline); }
+    .session__num {
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: var(--terra);
+      flex-shrink: 0;
+      width: 36px;
+    }
+    .session__title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .session__desc {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--ink-mute);
+    }
+
+    /* ── Disclaimer ── */
+    .disclaimer {
+      font-size: 13px;
+      color: #9a948c;
+      max-width: 720px;
+      margin-top: 28px;
+      line-height: 1.6;
+    }
+
+    /* ── Contact band ── */
+    .contact-band {
+      padding: 112px 40px;
+      background:
+        radial-gradient(ellipse 55% 80% at 80% 50%, rgba(42,92,64,0.5) 0%, transparent 65%),
+        radial-gradient(ellipse 35% 55% at 10% 30%, rgba(61,31,92,0.3) 0%, transparent 60%),
+        var(--primary);
+      text-align: center;
+    }
+    .contact-band__inner { max-width: 680px; margin: 0 auto; }
+    .contact-band__h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(32px, 4.4vw, 50px);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin: 0;
+    }
+    .contact-band__sub {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--on-primary-mute);
+      margin: 24px auto 40px;
+      max-width: 520px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .back-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 900px) {
+      .contact-band { padding: 80px 24px; }
+      .format-box { padding: 32px 28px; }
+      .session { gap: 16px; }
+      .programs-hero__grid { grid-template-columns: 1fr; gap: 32px; }
+      .dla-kogo-grid { grid-template-columns: 1fr; gap: 32px; }
+      .format-box__list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="wrap nav__inner">
+      <a href="/en/" class="nav__logo">The <em>Conscious</em> Human</a>
+      <div class="nav__links">
+        <a href="/en/#about" class="nav__link">About</a>
+        <a href="/en/programs/" class="nav__link">Programs</a>
+        <a href="/en/#how-we-work" class="nav__link">How we work</a>
+        <a href="/en/#contact" class="nav__link">Contact</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div class="lang-switch">
+          <a href="/programy/unreplaced/" class="lang-switch__item">PL</a>
+          <span class="lang-switch__sep">·</span>
+          <span class="lang-switch__item lang-switch__item--active">EN</span>
+        </div>
+        <a href="/en/#contact" class="btn btn--nav">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="programs-hero">
+    <div class="wrap programs-hero__grid">
+      <div>
+        <a href="../" class="back-link">← All programs</a>
+        <span class="eyebrow" style="display:block; margin-top: 24px;">Building skills for the AI era</span>
+        <h1 class="hero__h1" style="margin-top: 18px;">Unreplaced</h1>
+        <div class="data-block" style="margin-top: 24px;">
+          <p>A <a href="https://www.weforum.org/publications/artificial-intelligence-and-the-future-of-entry-level-work-a-framework-for-safeguarding-and-reinventing-early-career-pathways/" target="_blank" rel="noopener">2026 World Economic Forum report</a> shows that AI isn't so much eliminating jobs en masse as changing how we work. Already 37% of young workers are in roles exposed to significant task change, and 28% believe that within three years, at least half of their current skills will lose relevance.</p>
+          <p>The first effects are already visible: in 2025, job postings for juniors fell 7%, while postings for experienced professionals rose 4%. At the same time, the more AI can do, the more valuable human judgment becomes — judgment that's built through self-awareness and experience.</p>
+          <p>That's why this program doesn't focus on AI tools, which change quickly. It focuses on what stays: how you think, how you decide, how you read a situation, and how you work with people. We don't know which jobs will "survive," but people who understand themselves and their strengths will lead the change.</p>
+        </div>
+      </div>
+      <div class="programs-hero__photo">
+        <img src="../../../programy/unreplaced/Unreplaced training 1.png" alt="A facilitator leading an Unreplaced session at a flip chart reading “Developing skills that AI cannot replace”" loading="lazy">
+      </div>
+    </div>
+  </header>
+
+  <!-- Who it's for -->
+  <section class="section section--white">
+    <div class="wrap dla-kogo-grid">
+      <div class="format-box">
+        <ul class="format-box__list">
+          <li>an 8-session cycle</li>
+          <li>group of up to 12 people</li>
+          <li>sessions every two weeks</li>
+          <li>each session lasts 1.5 hours</li>
+        </ul>
+      </div>
+      <div class="section__intro section__intro--left" style="margin-bottom: 0;">
+        <span class="eyebrow">Who it's for</span>
+        <p class="body-lg" style="margin-top: 16px;">For people who feel uneasy about AI-driven change and would rather deal with it than pretend it isn't happening.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="section section--cream" style="padding: 72px 0;">
+    <div class="wrap">
+      <div class="quote-block">
+        <p class="quote-block__text">"People often ask me: will AI take my job? The real question is: what do I bring that can't just be generated by AI? Most of us never had to ask ourselves that question, because doing our job well used to be enough. That era is ending."</p>
+        <div class="quote-block__attr-row">
+          <img src="../../../Aga zielony.jpg" alt="Aga Skraburska" class="quote-block__avatar" loading="lazy">
+          <p class="quote-block__attr">— Aga Skraburska, Founder and Board President of The Conscious Human Foundation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sessions -->
+  <section class="section section--white" style="padding-bottom: 56px;">
+    <div class="wrap">
+      <div class="section__intro section__intro--left">
+        <span class="eyebrow">Session plan</span>
+        <h2 class="h2" style="margin-top: 16px;">Eight sessions, one cycle.</h2>
+      </div>
+
+      <div class="session">
+        <span class="session__num">01</span>
+        <div>
+          <h3 class="session__title">What's actually changing</h3>
+          <p class="session__desc">We start by getting the facts straight: what AI does well today, what it doesn't, and where its responsibility ends. Then it gets personal — you look at your own work and separate what's a task from what's you. For many people, this is the first moment unease turns into something concrete.</p>
+        </div>
+      </div>
+      <div class="session">
+        <span class="session__num">02</span>
+        <div>
+          <h3 class="session__title">Critical thinking</h3>
+          <p class="session__desc">When answers come instantly and sound confident, the biggest risk isn't the machine getting it wrong — it's that we stop checking. In this session we practise asking better questions, spotting our own assumptions, and making decisions when the information is incomplete, which is the rule, not the exception.</p>
+        </div>
+      </div>
+      <div class="session">
+        <span class="session__num">03</span>
+        <div>
+          <h3 class="session__title">Creativity</h3>
+          <p class="session__desc">Creativity isn't artistic talent. It's the ability to connect things that don't seem to belong together, and to notice a problem before anyone's put it into words. AI models are great at generating variations on what already exists. They're much weaker at asking whether we're even working on the right problem. That's what we practise here.</p>
+        </div>
+      </div>
+      <div class="session">
+        <span class="session__num">04</span>
+        <div>
+          <h3 class="session__title">Adaptability</h3>
+          <p class="session__desc">Change rarely hurts on its own. What hurts is losing predictability and the sense of being good at something — after years of competence, you're a beginner again. This session is about getting through that period without faking enthusiasm or gritting your teeth. About learning faster, and making peace with a stretch of genuine discomfort.</p>
+        </div>
+      </div>
+      <div class="session">
+        <span class="session__num">05</span>
+        <div>
+          <h3 class="session__title">Mental resilience</h3>
+          <p class="session__desc">It's hard to think clearly with constant background worry about the future. We talk about what actually builds stability: what's within your control and what isn't, how to tell worry apart from information, and where to draw your sense of worth from when work stops providing it. No forced reassurance.</p>
+        </div>
+      </div>
+      <div class="session">
+        <span class="session__num">06</span>
+        <div>
+          <h3 class="session__title">Communication and empathy</h3>
+          <p class="session__desc">The more gets automated, the more depends on conversation — on whether you can persuade someone, listen carefully, or say a hard thing in a way the other person can actually hear. It's the oldest skill we have, and right now it's also the most underrated. We practise it on situations from your own work.</p>
+        </div>
+      </div>
+      <div class="session">
+        <span class="session__num">07</span>
+        <div>
+          <h3 class="session__title">Initiative and ownership</h3>
+          <p class="session__desc">This isn't about starting a company. It's about a mindset: noticing a problem and dealing with it before anyone tells you to. In a world where simply following instructions loses value the fastest, that's one of the few things that genuinely strengthens your position. We work on what's been holding you back from it.</p>
+        </div>
+      </div>
+      <div class="session">
+        <span class="session__num">08</span>
+        <div>
+          <h3 class="session__title">Your plan and your group</h3>
+          <p class="session__desc">At the end, you put it all into a simple plan: what you're learning, what you're changing about how you work, and how you'll know it's heading the right way. We're also honest that resolutions like this usually fade within two weeks if no one else knows about them — which is why we finish as a group, not alone.</p>
+        </div>
+      </div>
+
+      <p class="disclaimer">These workshops are educational and developmental in nature. We do not provide professional or legal advice.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <div class="contact-band">
+    <div class="contact-band__inner">
+      <h2 class="contact-band__h2">Find out what you bring.</h2>
+      <p class="contact-band__sub">Write to us and ask about the next Unreplaced cycle.</p>
+      <a href="mailto:info@conscioushuman.pl" class="btn btn--primary">Ask about the next round →</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">The <em>Conscious</em> Human</span>
+        <p class="footer__note"><a href="../../../statut-fundacji.pdf" target="_blank">Foundation Statute</a></p>
+      </div>
+      <div class="footer__contact">
+        <span class="footer__label">Contact</span>
+        <span>ul. Brzozowa 42/7, 40-170 Katowice, Poland</span>
+        <a href="mailto:info@conscioushuman.pl">info@conscioushuman.pl</a>
+        <a href="tel:+48693331071">+48 693 331 071</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

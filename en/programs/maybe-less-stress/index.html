@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MayBe Less Stress — Programs — The Conscious Human</title>
+  <meta name="description" content="A free 8-session workshop cycle on burnout and stress prevention. Groups of up to 12, sessions every two weeks.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    /* ── Program hero ── */
+    .programs-hero {
+      padding: 96px 0 72px;
+      background:
+        radial-gradient(ellipse 55% 65% at 78% 35%, rgba(238,243,238,0.95) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 45% at 15% 75%, rgba(61,31,92,0.07) 0%, transparent 60%),
+        var(--canvas-cream);
+    }
+    .programs-hero__grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .programs-hero__photo {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--elev-3);
+      aspect-ratio: 4 / 3;
+    }
+    .programs-hero__photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── Who it's for grid ── */
+    .dla-kogo-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    /* ── Format box ── */
+    .format-box {
+      background: var(--canvas-sage);
+      border-radius: 20px;
+      padding: 40px 44px;
+    }
+    .format-box__list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 24px;
+    }
+    .format-box__list li {
+      font-size: 15px;
+      color: var(--ink-mute);
+      padding-left: 20px;
+      position: relative;
+    }
+    .format-box__list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--terra);
+    }
+
+    /* ── Quote block ── */
+    .quote-block { max-width: 720px; margin: 0 auto; text-align: center; }
+    .quote-block__text {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(22px, 2.4vw, 30px);
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      color: var(--violet);
+    }
+    .quote-block__attr-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .quote-block__attr {
+      font-size: 15px;
+      color: var(--ink-mute);
+    }
+    .quote-block__avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* ── Session list ── */
+    .session {
+      display: flex;
+      gap: 28px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .session:first-child { border-top: 1px solid var(--hairline); }
+    .session__num {
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: var(--terra);
+      flex-shrink: 0;
+      width: 36px;
+    }
+    .session__title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .session__desc {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--ink-mute);
+    }
+
+    /* ── Disclaimer ── */
+    .disclaimer {
+      font-size: 13px;
+      color: #9a948c;
+      max-width: 720px;
+      margin-top: 28px;
+      line-height: 1.6;
+    }
+
+    /* ── Contact band ── */
+    .contact-band {
+      padding: 112px 40px;
+      background:
+        radial-gradient(ellipse 55% 80% at 80% 50%, rgba(42,92,64,0.5) 0%, transparent 65%),
+        radial-gradient(ellipse 35% 55% at 10% 30%, rgba(61,31,92,0.3) 0%, transparent 60%),
+        var(--primary);
+      text-align: center;
+    }
+    .contact-band__inner { max-width: 680px; margin: 0 auto; }
+    .contact-band__h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(32px, 4.4vw, 50px);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin: 0;
+    }
+    .contact-band__sub {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--on-primary-mute);
+      margin: 24px auto 40px;
+      max-width: 520px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .back-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 900px) {
+      .contact-band { padding: 80px 24px; }
+      .format-box { padding: 32px 28px; }
+      .session { gap: 16px; }
+      .programs-hero__grid { grid-template-columns: 1fr; gap: 32px; }
+      .dla-kogo-grid { grid-template-columns: 1fr; gap: 32px; }
+      .format-box__list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="wrap nav__inner">
+      <a href="/en/" class="nav__logo">The <em>Conscious</em> Human</a>
+      <div class="nav__links">
+        <a href="/en/#about" class="nav__link">About</a>
+        <a href="/en/programs/" class="nav__link">Programs</a>
+        <a href="/en/#how-we-work" class="nav__link">How we work</a>
+        <a href="/en/#contact" class="nav__link">Contact</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div class="lang-switch">
+          <a href="/programy/maybe-less-stress/" class="lang-switch__item">PL</a>
+          <span class="lang-switch__sep">·</span>
+          <span class="lang-switch__item lang-switch__item--active">EN</span>
+        </div>
+        <a href="/en/#contact" class="btn btn--nav">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="programs-hero">
+    <div class="wrap programs-hero__grid">
+      <div>
+        <a href="../" class="back-link">← All programs</a>
+        <span class="eyebrow" style="display:block; margin-top: 24px;">Burnout and stress prevention for adults</span>
+        <h1 class="hero__h1" style="margin-top: 18px;">MayBe Less Stress</h1>
+        <p class="body-lg" style="margin-top: 28px;">Most of us don't struggle to know what to do. We struggle because we know too much and do too little. This cycle runs against the grain of most stress advice: instead of adding another method, we take things away. First you find out where tension actually shows up for you, then you work on one thing at a time.</p>
+      </div>
+      <div class="programs-hero__photo">
+        <img src="../../../programy/maybe-less-stress/Training.png" alt="A participant in a MayBe Less Stress session during a video call" loading="lazy">
+      </div>
+    </div>
+  </header>
+
+  <!-- Who it's for -->
+  <section class="section section--white">
+    <div class="wrap dla-kogo-grid">
+      <div class="format-box">
+        <ul class="format-box__list">
+          <li>an 8-session cycle</li>
+          <li>group of up to 12 people</li>
+          <li>sessions every two weeks</li>
+          <li>each session lasts 1.5 hours</li>
+        </ul>
+      </div>
+      <div class="section__intro section__intro--left" style="margin-bottom: 0;">
+        <span class="eyebrow">Who it's for</span>
+        <p class="body-lg" style="margin-top: 16px;">For people living under constant tension — at university, at work and beyond — who feel like life is happening just out of reach.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="section section--cream" style="padding: 72px 0;">
+    <div class="wrap">
+      <div class="quote-block">
+        <p class="quote-block__text">"We don't promise that after eight sessions your stress will disappear. It won't, and that's not the point. The point is that it stops making decisions for you."</p>
+        <div class="quote-block__attr-row">
+          <img src="../../../Aga zielony.jpg" alt="Aga Skraburska" class="quote-block__avatar" loading="lazy">
+          <p class="quote-block__attr">— Aga Skraburska, Founder and Board President of The Conscious Human Foundation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sessions -->
+  <section class="section section--white" style="padding-bottom: 56px;">
+    <div class="wrap">
+      <div class="section__intro section__intro--left">
+        <span class="eyebrow">Session plan</span>
+        <h2 class="h2" style="margin-top: 16px;">Eight sessions, one cycle.</h2>
+      </div>
+
+      <div class="session">
+        <span class="session__num">01</span>
+        <div>
+          <h3 class="session__title">Where your stress actually comes from</h3>
+          <p class="session__desc">When tension runs high, everything looks equally urgent. This session has one goal: finding out where your stress really lives. Very often, what wears us down most isn't what we talk about most. So we start by understanding, not solving, and you choose one area to focus on for the whole cycle.</p>
+        </div>
+      </div>
+      <div class="session">
+        <span class="session__num">02</span>
+        <div>
+          <h3 class="session__title">What the body is telling you</h3>
+          <p class="session__desc">The body usually knows first. Tight shoulders, a clenched jaw, shallow breathing. We often miss these signals for years because we're too busy. In this session you learn to recognise your own signals and pick up a few simple exercises that help ease stress in the middle of a busy day, not just in a calm setting.</p>
+        </div>
+      </div>
+      <div class="session">
+        <span class="session__num">03</span>
+        <div>
+          <h3 class="session__title">Sleep and energy</h3>
+          <p class="session__desc">Trouble falling asleep, waking up at night, tiredness despite enough hours in bed, an afternoon energy crash. We talk about what genuinely supports rest: daily rhythm, light, winding down in the evening, breaks that actually recharge you. No miracle methods — ordinary things, done consistently.</p>
+        </div>
+      </div>
+      <div class="session">
+        <span class="session__num">04</span>
+        <div>
+          <h3 class="session__title">When your head won't slow down</h3>
+          <p class="session__desc">Thoughts keep coming back in the evening and on weekends. That's not a willpower problem, it's an overload problem. In this session we practise the one skill that makes the biggest difference and is also the hardest: subtracting. Telling the important apart from the merely loud. For many people, this is the most uncomfortable session in the whole cycle.</p>
+        </div>
+      </div>
+      <div class="session">
+        <span class="session__num">05</span>
+        <div>
+          <h3 class="session__title">Life on autopilot</h3>
+          <p class="session__desc">Days start to blur together, and you're carrying out a plan you never consciously chose. We pause and look at where your time and energy actually go — not to overturn everything, but to put you back in charge of the decisions.</p>
+        </div>
+      </div>
+      <div class="session">
+        <span class="session__num">06</span>
+        <div>
+          <h3 class="session__title">Boundaries and hard conversations</h3>
+          <p class="session__desc">Many of us say "yes" while thinking "no," or react too aggressively, and carry the resulting tiredness and resentment around with us. In this session we work on specifics: how to say no without over-explaining, how to start a conversation you've been putting off for months, and how to stay out of other people's tension. We practise on your real situations, not textbook examples.</p>
+        </div>
+      </div>
+      <div class="session">
+        <span class="session__num">07</span>
+        <div>
+          <h3 class="session__title">Understanding your own reactions</h3>
+          <p class="session__desc">Sometimes we react more strongly than we'd like, or pull back exactly where it matters most to us. It's worth seeing what's underneath that — not to look for someone to blame in the past, and not to become a prisoner of your own history, but to have a real choice today. We go as deep as you want to, and not a step further.</p>
+        </div>
+      </div>
+      <div class="session">
+        <span class="session__num">08</span>
+        <div>
+          <h3 class="session__title">Your plan and your group</h3>
+          <p class="session__desc">Knowledge alone doesn't change much. You put together a simple everyday plan — a few steps you'll actually follow through on. We're also honest about something visible in every group: change tends to fade when you're on your own, and holds far better when you're surrounded by people moving in the same direction. That's not a guarantee. It's the best thing I know.</p>
+        </div>
+      </div>
+
+      <p class="disclaimer">These workshops are educational and developmental in nature and are not a substitute for medical consultation or therapy.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <div class="contact-band">
+    <div class="contact-band__inner">
+      <h2 class="contact-band__h2">Ready for one thing at a time?</h2>
+      <p class="contact-band__sub">Write to us and ask about the next MayBe Less Stress cycle.</p>
+      <a href="mailto:info@conscioushuman.pl" class="btn btn--primary">Ask about the next round →</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">The <em>Conscious</em> Human</span>
+        <p class="footer__note"><a href="../../../statut-fundacji.pdf" target="_blank">Foundation Statute</a></p>
+      </div>
+      <div class="footer__contact">
+        <span class="footer__label">Contact</span>
+        <span>ul. Brzozowa 42/7, 40-170 Katowice, Poland</span>
+        <a href="mailto:info@conscioushuman.pl">info@conscioushuman.pl</a>
+        <a href="tel:+48693331071">+48 693 331 071</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
