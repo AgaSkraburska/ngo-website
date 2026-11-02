@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Polityka prywatności — The Conscious Human</title>
+  <meta name="description" content="Polityka prywatności Fundacji The Conscious Human: zasady przetwarzania danych osobowych, klauzule informacyjne dla uczestników programów i kontrahentów.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .legal-hero {
+      padding: 96px 0 64px;
+      background:
+        radial-gradient(ellipse 55% 65% at 78% 35%, rgba(238,243,238,0.95) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 45% at 15% 75%, rgba(61,31,92,0.07) 0%, transparent 60%),
+        var(--canvas-cream);
+    }
+    .legal-hero__date {
+      margin-top: 20px;
+      font-size: 15px;
+      color: var(--ink-mute);
+    }
+
+    .legal-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .legal-toc {
+      position: sticky;
+      top: calc(var(--nav-height) + 32px);
+      font-size: 14px;
+    }
+    .legal-toc__label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 14px;
+    }
+    .legal-toc ol { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .legal-toc a { color: var(--ink-mute); text-decoration: none; line-height: 1.4; }
+    .legal-toc a:hover { color: var(--primary); }
+
+    .legal {
+      min-width: 0;
+      overflow-wrap: break-word;
+      max-width: 760px;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--ink-mute);
+    }
+    .legal > p:first-child { font-size: 18px; }
+    .legal h2 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 1.3;
+      letter-spacing: -0.015em;
+      color: var(--primary);
+      margin: 56px 0 18px;
+      scroll-margin-top: calc(var(--nav-height) + 24px);
+    }
+    .legal p { margin-bottom: 16px; }
+    .legal strong { color: var(--ink); font-weight: 700; }
+    .legal ul, .legal ol { margin: 0 0 18px 22px; }
+    .legal li { margin-bottom: 8px; padding-left: 4px; }
+    .legal li ul { margin-top: 8px; }
+    .legal a { color: var(--primary); text-underline-offset: 3px; }
+
+    .legal-table-wrap {
+      overflow-x: auto;
+      margin: 8px 0 24px;
+      border: 1px solid var(--hairline);
+      border-radius: 14px;
+    }
+    .legal table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .legal th, .legal td {
+      text-align: left;
+      vertical-align: top;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .legal tr:last-child td { border-bottom: none; }
+    .legal th {
+      background: var(--canvas-sage);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .legal td:first-child { width: 38%; }
+    .legal .table--areas td:first-child { width: 30%; color: var(--ink); font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .legal-hero { padding: 64px 0 48px; }
+      .legal-layout { grid-template-columns: 1fr; gap: 0; }
+      .legal-toc { display: none; }
+      .legal th, .legal td { padding: 12px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="wrap nav__inner">
+      <a href="../index.html" class="nav__logo">The <em>Conscious</em> Human</a>
+      <div class="nav__links">
+        <a href="../o-fundacji/" class="nav__link">O fundacji</a>
+        <a href="../programy/" class="nav__link">Programy</a>
+        <a href="../index.html#jak-dzialamy" class="nav__link">Jak działamy</a>
+        <a href="../index.html#kontakt" class="nav__link">Kontakt</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div class="lang-switch">
+          <span class="lang-switch__item lang-switch__item--active">PL</span>
+          <span class="lang-switch__sep">·</span>
+          <a href="/en/" class="lang-switch__item">EN</a>
+        </div>
+        <a href="../index.html#kontakt" class="btn btn--nav">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="legal-hero">
+    <div class="wrap">
+      <span class="eyebrow">Dokumenty Fundacji</span>
+      <h1 class="hero__h1" style="margin-top: 18px;">Polityka prywatności</h1>
+      <p class="legal-hero__date">Obowiązuje od 31 maja 2026 r.</p>
+    </div>
+  </header>
+
+  <section class="section section--white" style="padding-top: 72px;">
+    <div class="wrap legal-layout">
+
+      <aside class="legal-toc" aria-label="Spis treści">
+        <span class="legal-toc__label">Spis treści</span>
+        <ol>
+          <li><a href="#administrator">1. Administrator danych</a></li>
+          <li><a href="#definicje">2. Definicje</a></li>
+          <li><a href="#kontakt-z-fundacja">3. Kontakt z Fundacją</a></li>
+          <li><a href="#uczestnicy">4. Uczestnicy Programów</a></li>
+          <li><a href="#wizerunek">5. Wizerunek</a></li>
+          <li><a href="#kontrahenci">6. Kontrahenci</a></li>
+          <li><a href="#media-spolecznosciowe">7. Media społecznościowe</a></li>
+          <li><a href="#odbiorcy">8. Odbiorcy danych</a></li>
+          <li><a href="#poza-eog">9. Przekazywanie poza EOG</a></li>
+          <li><a href="#prawa">10. Twoje prawa</a></li>
+          <li><a href="#cookies">11. Profilowanie, cookies, bezpieczeństwo</a></li>
+          <li><a href="#postanowienia-koncowe">12. Postanowienia końcowe</a></li>
+        </ol>
+      </aside>
+
+      <article class="legal">
+        <p>Niniejsza polityka prywatności (dalej: „Polityka Prywatności”) określa zasady przetwarzania danych osobowych przez Fundację The Conscious Human w związku z korzystaniem ze Strony Internetowej, kontaktem z Fundacją, udziałem w programach Fundacji, współpracą z Fundacją oraz obecnością Fundacji w mediach społecznościowych. Polityka Prywatności zawiera również informacje o prawach, które przysługują Państwu w związku z przetwarzaniem danych.</p>
+        <p>Polityka Prywatności realizuje obowiązek informacyjny wynikający z art. 13 i 14 RODO. Obejmuje w szczególności klauzulę informacyjną dla uczestników programów (klientów) oraz klauzulę informacyjną dla kontrahentów.</p>
+
+        <h2 id="administrator">1. Administrator danych osobowych</h2>
+        <p>Administratorem Państwa danych osobowych jest <strong>Fundacja The Conscious Human</strong> z siedzibą w Katowicach (ul. Brzozowa 42/7, 40-170 Katowice), wpisana do rejestru stowarzyszeń, innych organizacji społecznych i zawodowych, fundacji oraz samodzielnych publicznych zakładów opieki zdrowotnej Krajowego Rejestru Sądowego pod numerem KRS: 0001222166, NIP: 9542903039, REGON: 543951195 (dalej: „Administrator” lub „Fundacja”).</p>
+        <p>W sprawach związanych z ochroną danych osobowych mogą się Państwo kontaktować z Administratorem:</p>
+        <ul>
+          <li>e-mailowo: <a href="mailto:info@conscioushuman.pl">info@conscioushuman.pl</a>,</li>
+          <li>telefonicznie: <a href="tel:+48693331071">+48 693 331 071</a>,</li>
+          <li>listownie: ul. Brzozowa 42/7, 40-170 Katowice.</li>
+        </ul>
+
+        <h2 id="definicje">2. Definicje</h2>
+        <p>Ilekroć w Polityce Prywatności użyto poniższych zwrotów pisanych wielką literą, należy je rozumieć w następującym znaczeniu:</p>
+        <ul>
+          <li><strong>Strona Internetowa</strong> – serwis internetowy dostępny pod adresem conscioushuman.pl, prowadzony przez Fundację.</li>
+          <li><strong>Użytkownik</strong> – każda osoba odwiedzająca Stronę Internetową lub kontaktująca się z Fundacją.</li>
+          <li><strong>Programy</strong> – bezpłatne programy prowadzone przez Fundację, np. „Unreplaced” oraz „MayBe Less Stress”.</li>
+          <li><strong>Uczestnik (Klient)</strong> – pełnoletnia osoba fizyczna, która zgłosiła się do udziału w Programie lub bierze w nim udział.</li>
+          <li><strong>Formularz Zgłoszeniowy</strong> – formularz elektroniczny, za pomocą którego Uczestnik zgłasza chęć udziału w Programie.</li>
+          <li><strong>Kontrahent</strong> – osoba fizyczna, osoba fizyczna prowadząca działalność gospodarczą lub osoba reprezentująca albo wskazana do kontaktu przez podmiot, z którym Fundacja zawiera lub zamierza zawrzeć umowę (np. dostawca usług, współpracownik, partner).</li>
+          <li><strong>RODO</strong> – Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych).</li>
+          <li><strong>EOG</strong> – Europejski Obszar Gospodarczy, obejmujący państwa Unii Europejskiej oraz Islandię, Liechtenstein i Norwegię.</li>
+        </ul>
+
+        <h2 id="kontakt-z-fundacja">3. Kontakt z Fundacją (e-mail i telefon)</h2>
+        <p>Jeżeli kontaktują się Państwo z Fundacją e-mailowo lub telefonicznie, przetwarzamy dane podane w wiadomości lub rozmowie: najczęściej imię, nazwisko, adres e-mail, numer telefonu oraz treść zapytania.</p>
+        <ul>
+          <li><strong>Cel:</strong> udzielenie odpowiedzi na zapytanie i prowadzenie dalszej korespondencji.</li>
+          <li><strong>Podstawa prawna:</strong> art. 6 ust. 1 lit. f RODO – prawnie uzasadniony interes Administratora, którym jest udzielenie odpowiedzi na zapytanie i komunikacja z osobami kontaktującymi się z Fundacją. Jeżeli zapytanie dotyczy zawarcia umowy lub udziału w Programie – art. 6 ust. 1 lit. b RODO.</li>
+          <li><strong>Okres przechowywania:</strong> przez czas niezbędny do udzielenia odpowiedzi i prowadzenia korespondencji, a następnie do upływu okresu przedawnienia ewentualnych roszczeń, nie dłużej jednak niż do skutecznego wniesienia sprzeciwu.</li>
+          <li><strong>Dobrowolność:</strong> podanie danych jest dobrowolne, ale niezbędne do udzielenia odpowiedzi.</li>
+        </ul>
+
+        <h2 id="uczestnicy">4. Klauzula informacyjna dla Uczestników Programów (Klientów)</h2>
+        <p>Fundacja prowadzi bezpłatne Programy, np. „Unreplaced” i „MayBe Less Stress”. Zgłoszenie odbywa się przez Formularz Zgłoszeniowy. Programy są przeznaczone wyłącznie dla osób pełnoletnich.</p>
+        <p><strong>Zakres danych.</strong> Przetwarzamy: imię, nazwisko, adres e-mail, numer telefonu, adres (jeżeli jest potrzebny do wystawienia dokumentu), informacje o tym, co Uczestnik chce osiągnąć dzięki Programowi, a także informacje przekazane przez Uczestnika w trakcie warsztatów oraz w ankietach ewaluacyjnych.</p>
+        <p><strong>Cele i podstawy prawne przetwarzania:</strong></p>
+        <div class="legal-table-wrap">
+          <table>
+            <thead><tr><th>Cel</th><th>Podstawa prawna</th></tr></thead>
+            <tbody>
+              <tr><td>Przyjęcie zgłoszenia, rezerwacja miejsca w grupie, organizacja i przeprowadzenie Programu, kontakt w sprawach związanych z Programem (terminy, zmiany, materiały)</td><td>art. 6 ust. 1 lit. b RODO – podjęcie działań przed zawarciem i wykonanie umowy o nieodpłatny udział w Programie</td></tr>
+              <tr><td>Dopasowanie Programu do potrzeb Uczestnika na podstawie informacji o jego oczekiwaniach</td><td>art. 6 ust. 1 lit. b RODO</td></tr>
+              <tr><td>Przetwarzanie informacji o zdrowiu (np. o samopoczuciu, poziomie stresu, śnie), jeżeli Uczestnik zdecyduje się je przekazać</td><td>art. 9 ust. 2 lit. a RODO – wyraźna zgoda Uczestnika</td></tr>
+              <tr><td>Ewaluacja i rozwój Programów, sporządzanie zbiorczych, zanonimizowanych zestawień i sprawozdań z działalności statutowej</td><td>art. 6 ust. 1 lit. f RODO – prawnie uzasadniony interes Fundacji polegający na doskonaleniu Programów i rozliczaniu działalności</td></tr>
+              <tr><td>Informowanie o kolejnych edycjach Programów i innych inicjatywach Fundacji drogą elektroniczną</td><td>art. 6 ust. 1 lit. a RODO – zgoda Uczestnika, wyrażona odrębnie</td></tr>
+              <tr><td>Wystawienie i przechowywanie dokumentów księgowych, jeżeli będzie to konieczne</td><td>art. 6 ust. 1 lit. c RODO – obowiązek prawny wynikający z przepisów podatkowych i ustawy o rachunkowości</td></tr>
+              <tr><td>Ustalenie, dochodzenie lub obrona przed roszczeniami</td><td>art. 6 ust. 1 lit. f RODO – prawnie uzasadniony interes Fundacji</td></tr>
+              <tr><td>Odpowiedź na żądania Uczestnika dotyczące jego danych</td><td>art. 6 ust. 1 lit. c RODO w zw. z art. 15–22 RODO</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Dane dotyczące zdrowia.</strong> Programy mają charakter edukacyjno-rozwojowy i nie zastępują konsultacji lekarskiej ani terapii. Fundacja nie wymaga podawania informacji o zdrowiu. Jeżeli Uczestnik sam je przekaże (np. w formularzu lub podczas warsztatów), Fundacja przetwarza je wyłącznie na podstawie jego wyraźnej zgody i tylko w celu przeprowadzenia Programu. Zgodę można w każdej chwili wycofać.</p>
+        <p><strong>Poufność w grupie.</strong> Uczestnicy zobowiązują się nie ujawniać osobom trzecim informacji o innych Uczestnikach, które poznali w trakcie warsztatów.</p>
+        <p><strong>Okres przechowywania.</strong> Dane przetwarzamy przez czas trwania Programu, a następnie do upływu okresu przedawnienia ewentualnych roszczeń (co do zasady do 6 lat od zakończenia Programu). Dane przetwarzane na podstawie zgody – do jej wycofania. Dokumenty księgowe – przez 5 lat od końca roku obrotowego, w którym je wystawiono. Informacje o zdrowiu usuwamy niezwłocznie po zakończeniu Programu, chyba że Uczestnik wcześniej wycofa zgodę.</p>
+        <p><strong>Dobrowolność.</strong> Podanie danych jest dobrowolne, ale niezbędne do udziału w Programie. Podanie informacji o zdrowiu oraz wyrażenie zgody na informowanie o kolejnych edycjach jest całkowicie dobrowolne i nie wpływa na możliwość udziału w Programie.</p>
+
+        <h2 id="wizerunek">5. Wizerunek Uczestników</h2>
+        <p>Podczas warsztatów w ramach Programów prowadzonych przez Fundację, Fundacja może wykonywać zdjęcia. Uczestnik może wyrazić zgodę na utrwalenie i rozpowszechnianie swojego wizerunku.</p>
+        <ul>
+          <li><strong>Cel:</strong> dokumentowanie i promowanie działalności statutowej Fundacji przez publikację zdjęć na Stronie Internetowej oraz w profilach Fundacji na Facebooku i LinkedIn.</li>
+          <li><strong>Podstawa prawna:</strong> art. 6 ust. 1 lit. a RODO (zgoda) w związku z art. 81 ust. 1 ustawy z dnia 4 lutego 1994 r. o prawie autorskim i prawach pokrewnych.</li>
+          <li><strong>Zakres:</strong> wyłącznie zdjęcia; Fundacja nie nagrywa obrazu ani dźwięku z warsztatów.</li>
+          <li><strong>Dobrowolność:</strong> zgoda jest dobrowolna. Jej brak nie wpływa na udział w Programie. Fundacja nie publikuje zdjęć, na których rozpoznawalna jest osoba, która nie wyraziła zgody.</li>
+          <li><strong>Okres przechowywania:</strong> do czasu wycofania zgody. Po jej wycofaniu Fundacja usuwa zdjęcia ze Strony Internetowej i swoich profili w mediach społecznościowych. Wycofanie zgody nie wpływa na zgodność z prawem publikacji dokonanej przed jej wycofaniem.</li>
+        </ul>
+        <p>Publikacja zdjęcia w mediach społecznościowych oznacza, że wizerunek jest przetwarzany także przez operatora danego serwisu, na zasadach określonych w jego polityce prywatności (zob. pkt 7).</p>
+
+        <h2 id="kontrahenci">6. Klauzula informacyjna dla Kontrahentów</h2>
+        <p>Dotyczy Kontrahentów oraz osób reprezentujących Kontrahentów lub wskazanych przez nich do kontaktu, w szczególności dostawców usług, z których korzysta Fundacja, współpracowników (np. coachów i trenerów) oraz partnerów.</p>
+        <p><strong>Zakres danych.</strong> Imię, nazwisko, stanowisko, nazwa i dane rejestrowe firmy (NIP, REGON, adres), adres e-mail, numer telefonu, numer rachunku bankowego oraz inne dane niezbędne do zawarcia i wykonania umowy. Dane osób reprezentujących Kontrahenta lub wskazanych do kontaktu Fundacja może otrzymać od samego Kontrahenta.</p>
+        <p><strong>Cele i podstawy prawne przetwarzania:</strong></p>
+        <ul>
+          <li>zawarcie i realizacja umowy z Kontrahentem będącym osobą fizyczną, w tym podjęcie działań przed jej zawarciem – art. 6 ust. 1 lit. b RODO;</li>
+          <li>kontakt z osobami reprezentującymi Kontrahenta lub wskazanymi do kontaktu w związku z realizacją umowy – art. 6 ust. 1 lit. f RODO; prawnie uzasadnionym interesem jest sprawna współpraca;</li>
+          <li>udokumentowanie i rozliczenie umowy na podstawie przepisów prawa podatkowego i rachunkowego – art. 6 ust. 1 lit. c RODO;</li>
+          <li>rozpatrywanie reklamacji i skarg dotyczących realizacji umowy – art. 6 ust. 1 lit. f RODO;</li>
+          <li>ustalenie, dochodzenie lub obrona przed roszczeniami – art. 6 ust. 1 lit. f RODO.</li>
+        </ul>
+        <p><strong>Okres przechowywania.</strong> Przez czas trwania umowy, a następnie do upływu okresu przedawnienia roszczeń wynikających z umowy (art. 118 Kodeksu cywilnego). Dokumenty księgowe przechowujemy przez okres wymagany przepisami podatkowymi i ustawą o rachunkowości (co do zasady 5 lat od końca roku obrotowego).</p>
+        <p><strong>Dobrowolność.</strong> Podanie danych jest dobrowolne, ale niezbędne do zawarcia i wykonania umowy.</p>
+
+        <h2 id="media-spolecznosciowe">7. Klauzula informacyjna dotycząca mediów społecznościowych</h2>
+        <p>Niniejsza klauzula dotyczy przetwarzania danych osobowych wyłącznie przez Fundację, a nie przez wskazane niżej serwisy, które są administratorami swoich serwisów. Zgodnie z art. 13 ust. 1 i 2 RODO informujemy, że:</p>
+        <div class="legal-table-wrap">
+          <table class="table--areas">
+            <thead><tr><th>Obszar</th><th>Informacja</th></tr></thead>
+            <tbody>
+              <tr><td>Administrator danych osobowych</td><td>Fundacja The Conscious Human, ul. Brzozowa 42/7, 40-170 Katowice, KRS 0001222166, NIP 9542903039, REGON 543951195.</td></tr>
+              <tr><td>Współadministratorzy</td><td><strong>Facebook i Instagram:</strong> w zakresie, w jakim Fundacja korzysta ze statystyk profilu (Page Insights), współadministratorami danych są Fundacja i Meta Platforms Ireland Limited, Merrion Road, Dublin 4, Irlandia. <strong>LinkedIn:</strong> w zakresie statystyk strony – Fundacja i LinkedIn Ireland Unlimited Company, Wilton Plaza, Wilton Place, Dublin 2, Irlandia. <strong>YouTube:</strong> Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irlandia. Każdy z tych podmiotów przetwarza dane na zasadach określonych w swojej polityce prywatności i regulaminach.</td></tr>
+              <tr><td>Rodzaj profilu</td><td>Publiczny.</td></tr>
+              <tr><td>Kategorie osób</td><td>Użytkownicy serwisów, którzy obserwują profile Fundacji, reagują na publikowane treści, komentują je lub wysyłają wiadomości.</td></tr>
+              <tr><td>Rodzaj danych</td><td>M.in. nazwa konta, wizerunek ze zdjęcia profilowego, treść komentarzy, postów i wiadomości prywatnych, reakcje (np. „Lubię to”, „Obserwuj”).</td></tr>
+              <tr><td>Cele przetwarzania</td><td>Udzielenie odpowiedzi na zapytanie i dalsza korespondencja; prowadzenie profilu i informowanie o działalności, Programach i wydarzeniach Fundacji; kontakt przez wiadomości prywatne i komentarze; cele statystyczne i analityczne; ewentualne dochodzenie roszczeń i obrona przed roszczeniami.</td></tr>
+              <tr><td>Podstawa prawna</td><td>Art. 6 ust. 1 lit. f RODO – prawnie uzasadniony interes Fundacji, którym jest komunikacja z użytkownikami, promowanie działalności statutowej oraz zabezpieczenie przed ewentualnymi roszczeniami.</td></tr>
+              <tr><td>Odbiorcy danych</td><td>Dane mogą być udostępniane podmiotom uprawnionym na podstawie przepisów prawa. Co do zasady Fundacja nie przekazuje danych do państw trzecich, a w razie takiej potrzeby stosuje wymogi Rozdziału V RODO (zob. pkt 9).</td></tr>
+              <tr><td>Okres przechowywania</td><td>Do czasu, gdy interesują Państwa treści publikowane na profilu, lub do wniesienia sprzeciwu. W przypadku roszczeń – do upływu okresu ich przedawnienia.</td></tr>
+              <tr><td>Profilowanie</td><td>Dane nie podlegają zautomatyzowanemu podejmowaniu decyzji, w tym profilowaniu.</td></tr>
+              <tr><td>Dobrowolność danych</td><td>Podanie danych jest dobrowolne.</td></tr>
+              <tr><td>Prawa</td><td>Prawa opisane w pkt 10. Żądania dotyczące danych przetwarzanych przez operatora serwisu najskuteczniej kierować bezpośrednio do niego.</td></tr>
+              <tr><td>Skarga do UODO</td><td>Prezes Urzędu Ochrony Danych Osobowych, ul. Stawki 2, 00-193 Warszawa.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="odbiorcy">8. Odbiorcy danych</h2>
+        <p>Dostęp do danych mają wyłącznie upoważnione osoby działające w imieniu Fundacji (członkowie Zarządu, współpracujący coachowie i trenerzy prowadzący Programy), zobowiązane do zachowania poufności. Dane mogą być powierzane lub udostępniane następującym kategoriom odbiorców:</p>
+        <ol>
+          <li>dostawcom usług IT, z których korzysta Fundacja, na podstawie umów powierzenia przetwarzania danych (art. 28 RODO), w szczególności:
+            <ul>
+              <li>Google (Google Workspace – przechowywanie dokumentów, formularze, spotkania online),</li>
+              <li>Zoho (Zoho Mail – poczta e-mail Fundacji),</li>
+              <li>Hostido – dostawcy usług hostingowych Strony Internetowej,</li>
+              <li>Anthropic – dostawcy narzędzia sztucznej inteligencji Claude, wykorzystywanego do prac organizacyjnych i redakcyjnych;</li>
+            </ul>
+          </li>
+          <li>podmiotom świadczącym na rzecz Fundacji usługi księgowe, prawne i doradcze;</li>
+          <li>operatorom serwisów społecznościowych – w zakresie opisanym w pkt 5 i 7;</li>
+          <li>bankom i operatorom pocztowym – w zakresie niezbędnym do realizacji płatności i korespondencji;</li>
+          <li>organom publicznym i innym podmiotom uprawnionym na podstawie przepisów prawa.</li>
+        </ol>
+        <p>Fundacja nie sprzedaje danych osobowych i nie udostępnia ich w celach marketingowych podmiotom trzecim.</p>
+
+        <h2 id="poza-eog">9. Przekazywanie danych poza EOG</h2>
+        <p><strong>Szwajcaria.</strong> Dane osobowe mogą być przetwarzane na terytorium Szwajcarii, w szczególności przez osoby działające w imieniu Fundacji, które tam przebywają. Szwajcaria nie należy do EOG, jednak Komisja Europejska stwierdziła, że zapewnia ona odpowiedni stopień ochrony danych osobowych (decyzja Komisji 2000/518/WE z dnia 26 lipca 2000 r.). Przekazywanie danych do Szwajcarii odbywa się więc na podstawie art. 45 RODO i nie wymaga dodatkowych zabezpieczeń ani zgody.</p>
+        <p><strong>Inne państwa trzecie.</strong> Niektórzy dostawcy usług IT (np. Google, Zoho, Anthropic) lub operatorzy serwisów społecznościowych mogą przetwarzać dane także w państwach trzecich, w szczególności w Stanach Zjednoczonych. W takim przypadku Fundacja zapewnia odpowiedni poziom ochrony zgodnie z Rozdziałem V RODO, w szczególności na podstawie:</p>
+        <ul>
+          <li>decyzji Komisji Europejskiej stwierdzającej odpowiedni stopień ochrony (np. dla podmiotów certyfikowanych w ramach EU-U.S. Data Privacy Framework), lub</li>
+          <li>standardowych klauzul umownych zatwierdzonych przez Komisję Europejską.</li>
+        </ul>
+        <p>Kopię zastosowanych zabezpieczeń można otrzymać, kontaktując się z Administratorem.</p>
+
+        <h2 id="prawa">10. Prawa osób, których dane dotyczą</h2>
+        <p>W związku z przetwarzaniem danych przysługuje Państwu prawo do:</p>
+        <ul>
+          <li>dostępu do swoich danych i otrzymania ich kopii (art. 15 RODO);</li>
+          <li>sprostowania nieprawidłowych danych (art. 16 RODO);</li>
+          <li>usunięcia danych, w przypadkach określonych w art. 17 RODO;</li>
+          <li>ograniczenia przetwarzania, w przypadkach określonych w art. 18 RODO;</li>
+          <li>przenoszenia danych przetwarzanych na podstawie zgody lub umowy w sposób zautomatyzowany (art. 20 RODO);</li>
+          <li>wniesienia sprzeciwu wobec przetwarzania opartego na prawnie uzasadnionym interesie Fundacji (art. 21 RODO);</li>
+          <li>wycofania zgody w dowolnym momencie, bez wpływu na zgodność z prawem przetwarzania dokonanego przed jej wycofaniem (art. 7 ust. 3 RODO).</li>
+        </ul>
+        <p>Aby skorzystać z tych praw, wystarczy napisać na adres <a href="mailto:info@conscioushuman.pl">info@conscioushuman.pl</a> lub listownie na adres siedziby Fundacji, wskazując, z którego prawa i w jakim zakresie chcą Państwo skorzystać. Fundacja odpowie bez zbędnej zwłoki, nie później niż w ciągu miesiąca. W razie uzasadnionych wątpliwości co do tożsamości wnioskodawcy Fundacja może poprosić o dodatkowe informacje.</p>
+        <p><strong>Skarga do organu nadzorczego.</strong> Jeżeli uważają Państwo, że Fundacja przetwarza dane niezgodnie z prawem, mogą Państwo wnieść skargę do Prezesa Urzędu Ochrony Danych Osobowych:</p>
+        <ul>
+          <li>listownie: ul. Stawki 2, 00-193 Warszawa,</li>
+          <li>przez elektroniczną skrzynkę podawczą: <a href="https://www.uodo.gov.pl/pl/p/kontakt" target="_blank" rel="noopener">uodo.gov.pl/pl/p/kontakt</a>,</li>
+          <li>telefonicznie: (22) 531 03 00.</li>
+        </ul>
+
+        <h2 id="cookies">11. Profilowanie, pliki cookies i bezpieczeństwo</h2>
+        <p><strong>Profilowanie.</strong> Fundacja nie podejmuje decyzji w sposób zautomatyzowany, w tym nie stosuje profilowania w rozumieniu art. 22 RODO.</p>
+        <p><strong>Pliki cookies i logi serwera.</strong> Strona Internetowa nie korzysta z narzędzi analitycznych ani marketingowych. Może używać wyłącznie plików cookies niezbędnych do jej prawidłowego działania (np. zapamiętania wybranej wersji językowej), na które nie jest wymagana zgoda zgodnie z ustawą z dnia 12 lipca 2024 r. – Prawo komunikacji elektronicznej. Serwer hostingowy automatycznie zapisuje techniczne logi (m.in. adres IP, datę i godzinę odwiedzin, typ przeglądarki) w celu zapewnienia bezpieczeństwa i prawidłowego działania Strony Internetowej, na podstawie art. 6 ust. 1 lit. f RODO. Pliki cookies można w każdej chwili zablokować lub usunąć w ustawieniach przeglądarki.</p>
+        <p>Jeżeli Fundacja wprowadzi w przyszłości narzędzia analityczne lub marketingowe, będzie z nich korzystać wyłącznie po uzyskaniu zgody Użytkownika i zaktualizuje Politykę Prywatności.</p>
+        <p><strong>Bezpieczeństwo.</strong> Fundacja stosuje odpowiednie środki techniczne i organizacyjne chroniące dane osobowe przed utratą, nieuprawnionym dostępem i ujawnieniem, w tym szyfrowane połączenie ze Stroną Internetową, uwierzytelnianie dwuskładnikowe w używanych narzędziach oraz ograniczenie dostępu do danych do niezbędnego minimum.</p>
+
+        <h2 id="postanowienia-koncowe">12. Postanowienia końcowe</h2>
+        <p>Fundacja może zmieniać Politykę Prywatności, w szczególności w razie zmiany przepisów, uruchomienia nowych Programów lub usług (np. newslettera, zbiórek, płatnych warsztatów) albo zmiany używanych narzędzi. O istotnych zmianach Fundacja poinformuje w widoczny sposób na Stronie Internetowej.</p>
+        <p>W razie pytań dotyczących Polityki Prywatności prosimy o kontakt: <a href="mailto:info@conscioushuman.pl">info@conscioushuman.pl</a>.</p>
+        <p>Polityka Prywatności obowiązuje od dnia 31 maja 2026 r.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="kontakt" class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">The <em>Conscious</em> Human</span>
+        <p class="footer__note"><a href="../statut-fundacji.pdf" target="_blank">Statut Fundacji</a> · <a href="./">Polityka prywatności</a></p>
+      </div>
+      <div class="footer__contact">
+        <span class="footer__label">Kontakt</span>
+        <span>ul. Brzozowa 42/7, 40-170 Katowice</span>
+        <a href="mailto:info@conscioushuman.pl">info@conscioushuman.pl</a>
+        <a href="tel:+48693331071">+48 693 331 071</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
