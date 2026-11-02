@@ -4,16 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Unreplaced — Programs — The Conscious Human</title>
-  <meta name="description" content="A free 8-session workshop cycle building skills for the AI era. Groups of up to 12, sessions every two weeks.">
+  <meta name="description" content="A free cycle of 8 workshops building skills AI can't replace. Editions with the Jagiellonian University and an open online edition from January.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="../../../favicon.png">
   <link rel="stylesheet" href="../../../css/style.css">
   <style>
+    section[id] { scroll-margin-top: calc(var(--nav-height) + 16px); }
+
     /* ── Program hero ── */
     .programs-hero {
-      padding: 96px 0 72px;
+      padding: 80px 0 72px;
       background:
         radial-gradient(ellipse 55% 65% at 78% 35%, rgba(238,243,238,0.95) 0%, transparent 65%),
         radial-gradient(ellipse 40% 45% at 15% 75%, rgba(61,31,92,0.07) 0%, transparent 60%),
@@ -37,45 +39,252 @@
       object-fit: cover;
       display: block;
     }
-    /* ── Who it's for grid ── */
-    .dla-kogo-grid {
+    .programs-hero__sub {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(22px, 2.4vw, 30px);
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: var(--violet);
+      margin-top: 10px;
+    }
+    .programs-hero__lead { margin-top: 24px; max-width: 560px; }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .back-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ── Facts strip ── */
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--hairline);
+      max-width: 560px;
+    }
+    .facts__value {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 26px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--primary);
+    }
+    .facts__label {
+      display: block;
+      font-size: 13px;
+      line-height: 1.35;
+      color: var(--ink-mute);
+      margin-top: 6px;
+    }
+
+    /* ── Editions ── */
+    .editions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+    .edition {
+      display: flex;
+      flex-direction: column;
+      border-radius: 20px;
+      padding: 32px 28px;
+      background: var(--canvas);
+      border: 1px solid var(--hairline);
+      box-shadow: 0 12px 32px rgba(26,61,43,0.07);
+    }
+    .edition__badge {
+      align-self: flex-start;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--terra);
+      background: rgba(181,85,42,0.1);
+      border-radius: 100px;
+      padding: 5px 12px;
+    }
+    .edition--open .edition__badge {
+      color: var(--violet);
+      background: var(--violet-light);
+    }
+    .edition__title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      color: var(--primary);
+      margin-top: 18px;
+    }
+    .edition__meta { margin: 20px 0 28px; flex: 1; }
+    .edition__row {
+      padding: 12px 0;
+      border-top: 1px solid var(--hairline);
+    }
+    .edition__row dt {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .edition__row dd {
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--ink);
+      margin-top: 3px;
+    }
+    .edition__row dd strong { font-weight: 700; }
+    .edition__cta {
+      white-space: normal;
+      text-align: center;
+      font-size: 15px;
+      padding: 13px 20px;
+    }
+    .edition__cta--soon {
+      background: var(--canvas-sage);
+      color: var(--ink-mute);
+      cursor: default;
+    }
+    .btn--violet {
+      background: var(--violet);
+      color: #fff;
+    }
+    .btn--violet:hover { background: var(--violet-mid); }
+    .btn--on-primary { color: var(--primary); background: #fff; font-size: 16px; padding: 14px 28px; }
+    .btn--on-primary:hover { background: var(--canvas-sage); }
+
+    /* ── Research ── */
+    .gap {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
       gap: 56px;
       align-items: center;
-    }
-
-    /* ── Format box ── */
-    .format-box {
-      background: var(--canvas-sage);
+      background: var(--canvas);
       border-radius: 20px;
       padding: 40px 44px;
+      box-shadow: 0 12px 32px rgba(26,61,43,0.07);
     }
-    .format-box__list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px 24px;
+    .gap__row + .gap__row { margin-top: 24px; }
+    .gap__head { display: flex; align-items: baseline; gap: 14px; }
+    .gap__value {
+      font-family: var(--font-display);
+      font-size: clamp(44px, 5vw, 64px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--primary);
+      flex-shrink: 0;
     }
-    .format-box__list li {
-      font-size: 15px;
+    .gap__label { font-size: 16px; line-height: 1.4; color: var(--ink-mute); }
+    .gap__track {
+      height: 10px;
+      margin-top: 10px;
+      border-radius: 4px;
+      background: var(--canvas-sage);
+      overflow: hidden;
+    }
+    .gap__fill { height: 100%; border-radius: 0 4px 4px 0; background: var(--primary); }
+    .gap__fill--low { background: var(--terra); }
+    .gap__text p { font-size: 17px; line-height: 1.65; color: var(--ink-mute); }
+    .gap__text p + p { margin-top: 14px; }
+
+    .source {
+      display: block;
+      font-size: 13px;
+      line-height: 1.4;
       color: var(--ink-mute);
-      padding-left: 20px;
-      position: relative;
     }
-    .format-box__list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 9px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--terra);
+    .source a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+    .source a:hover { color: var(--primary); }
+    .gap .source { margin-top: 20px; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0 40px;
+      margin-top: 40px;
+    }
+    .stat {
+      padding: 28px 0;
+      border-top: 1px solid var(--hairline);
+      display: flex;
+      flex-direction: column;
+    }
+    .stat__value {
+      font-family: var(--font-display);
+      font-size: 44px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--primary);
+    }
+    .stat__label {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ink);
+      margin: 12px 0 10px;
+      flex: 1;
+    }
+    .takeaway {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(20px, 2vw, 25px);
+      line-height: 1.4;
+      letter-spacing: -0.015em;
+      color: var(--violet);
+      max-width: 820px;
+      margin-top: 32px;
     }
 
-    /* ── Quote block ── */
-    .quote-block { max-width: 720px; margin: 0 auto; text-align: center; }
+    /* ── Scope ── */
+    .scope {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .scope__list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .scope__list li {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--primary);
+      background: var(--canvas-sage);
+      border-radius: 100px;
+      padding: 8px 16px;
+    }
+    .scope__not {
+      background: var(--canvas-cream);
+      border-radius: 20px;
+      padding: 32px 36px;
+    }
+    .scope__not h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 22px;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .scope__not p { font-size: 16px; line-height: 1.65; color: var(--ink-mute); }
+    .scope__not p + p { margin-top: 12px; }
+
+    /* ── Quote + facilitator ── */
+    .quote-block { max-width: 760px; margin: 0 auto; text-align: center; }
     .quote-block__text {
       font-family: var(--font-display);
       font-style: italic;
@@ -89,47 +298,41 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      margin-top: 20px;
-    }
-    .quote-block__attr {
-      font-size: 15px;
-      color: var(--ink-mute);
+      gap: 16px;
+      margin-top: 28px;
+      text-align: left;
     }
     .quote-block__avatar {
-      width: 44px;
-      height: 44px;
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
       object-fit: cover;
       flex-shrink: 0;
     }
-
-    /* ── Data block ── */
-    .data-block {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      max-width: 720px;
-    }
-    .data-block p {
-      font-size: 18px;
-      line-height: 1.7;
-      color: var(--ink-mute);
-    }
-    .data-block a {
-      color: var(--primary);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
+    .quote-block__name { font-size: 15px; font-weight: 700; color: var(--ink); }
+    .quote-block__bio { font-size: 14px; line-height: 1.5; color: var(--ink-mute); margin-top: 2px; }
 
     /* ── Session list ── */
-    .session {
+    .session { border-bottom: 1px solid var(--hairline); }
+    .session:first-of-type { border-top: 1px solid var(--hairline); }
+    .session summary {
       display: flex;
+      align-items: baseline;
       gap: 28px;
-      padding: 32px 0;
-      border-bottom: 1px solid var(--hairline);
+      padding: 22px 0;
+      cursor: pointer;
+      list-style: none;
     }
-    .session:first-child { border-top: 1px solid var(--hairline); }
+    .session summary::-webkit-details-marker { display: none; }
+    .session summary::after {
+      content: "+";
+      margin-left: auto;
+      font-size: 24px;
+      line-height: 1;
+      color: var(--ink-mute);
+    }
+    .session[open] summary::after { content: "–"; }
+    .session summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
     .session__num {
       font-family: var(--font-display);
       font-size: 22px;
@@ -142,22 +345,67 @@
       font-weight: 600;
       font-size: 20px;
       color: var(--primary);
-      margin-bottom: 10px;
     }
-    .session__desc {
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--ink-mute);
+    .session__body { padding: 0 40px 28px 64px; max-width: 860px; }
+    .session__desc { font-size: 16px; line-height: 1.7; color: var(--ink-mute); }
+    .session__outcome {
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--ink);
+      margin-top: 14px;
     }
+    .session__outcome strong { font-weight: 700; color: var(--primary); }
 
     /* ── Disclaimer ── */
     .disclaimer {
       font-size: 13px;
-      color: #9a948c;
+      color: var(--ink-mute);
       max-width: 720px;
       margin-top: 28px;
       line-height: 1.6;
     }
+
+    /* ── Research component ── */
+    .study {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .study__questions { list-style: none; counter-reset: q; }
+    .study__questions li {
+      counter-increment: q;
+      display: flex;
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--hairline);
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+    .study__questions li:first-child { border-top: 1px solid var(--hairline); }
+    .study__questions li::before {
+      content: counter(q);
+      font-family: var(--font-display);
+      font-size: 20px;
+      line-height: 1.3;
+      color: var(--terra);
+      flex-shrink: 0;
+    }
+    .study__note { font-size: 15px; line-height: 1.6; color: var(--ink-mute); margin-top: 20px; }
+
+    /* ── Sources ── */
+    .sources { margin-top: 40px; border-top: 1px solid var(--hairline); }
+    .sources summary {
+      padding: 18px 0;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      cursor: pointer;
+    }
+    .sources ul { list-style: none; columns: 2; column-gap: 40px; padding-bottom: 16px; }
+    .sources li { font-size: 14px; line-height: 1.5; color: var(--ink-mute); margin-bottom: 10px; break-inside: avoid; }
+    .sources a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 
     /* ── Contact band ── */
     .contact-band {
@@ -168,7 +416,7 @@
         var(--primary);
       text-align: center;
     }
-    .contact-band__inner { max-width: 680px; margin: 0 auto; }
+    .contact-band__inner { max-width: 720px; margin: 0 auto; }
     .contact-band__h2 {
       font-family: var(--font-display);
       font-weight: 400;
@@ -176,34 +424,32 @@
       line-height: 1.15;
       letter-spacing: -0.03em;
       color: #fff;
-      margin: 0;
+      margin: 0 0 32px;
     }
-    .contact-band__sub {
-      font-size: 18px;
-      line-height: 1.6;
-      color: var(--on-primary-mute);
-      margin: 24px auto 40px;
-      max-width: 520px;
-    }
-
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--primary);
-      text-decoration: none;
-    }
-    .back-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .contact-band__mail { font-size: 15px; color: var(--on-primary-mute); margin-top: 20px; }
+    .contact-band__mail a { color: #fff; }
 
     @media (max-width: 900px) {
+      .programs-hero { padding: 56px 0; }
+      .programs-hero__grid,
+      .scope,
+      .study,
+      .gap { grid-template-columns: 1fr; gap: 32px; }
+      .editions { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr 1fr; gap: 0 24px; }
+      .gap { padding: 28px 24px; }
       .contact-band { padding: 80px 24px; }
-      .format-box { padding: 32px 28px; }
-      .session { gap: 16px; }
-      .programs-hero__grid { grid-template-columns: 1fr; gap: 32px; }
-      .dla-kogo-grid { grid-template-columns: 1fr; gap: 32px; }
-      .format-box__list { grid-template-columns: 1fr; }
+      .session summary { gap: 16px; }
+      .session__body { padding: 0 0 24px 52px; }
+      .sources ul { columns: 1; }
+    }
+    @media (max-width: 480px) {
+      .facts { grid-template-columns: 1fr 1fr; }
+      .stats { grid-template-columns: 1fr; }
+      .scope__not { padding: 28px 24px; }
+      .session__body { padding-left: 0; }
+      .quote-block__attr-row { align-items: flex-start; }
+      .btn--on-primary { width: 100%; }
     }
   </style>
 </head>
@@ -235,35 +481,181 @@
     <div class="wrap programs-hero__grid">
       <div>
         <a href="../" class="back-link">← All programs</a>
-        <span class="eyebrow" style="display:block; margin-top: 24px;">Building skills for the AI era</span>
-        <h1 class="hero__h1" style="margin-top: 18px;">Unreplaced</h1>
-        <div class="data-block" style="margin-top: 24px;">
-          <p>A <a href="https://www.weforum.org/publications/artificial-intelligence-and-the-future-of-entry-level-work-a-framework-for-safeguarding-and-reinventing-early-career-pathways/" target="_blank" rel="noopener">2026 World Economic Forum report</a> shows that AI isn't so much eliminating jobs en masse as changing how we work. Already 37% of young workers are in roles exposed to significant task change, and 28% believe that within three years, at least half of their current skills will lose relevance.</p>
-          <p>The first effects are already visible: in 2025, job postings for juniors fell 7%, while postings for experienced professionals rose 4%. At the same time, the more AI can do, the more valuable human judgment becomes — judgment that's built through self-awareness and experience.</p>
-          <p>That's why this program doesn't focus on AI tools, which change quickly. It focuses on what stays: how you think, how you decide, how you read a situation, and how you work with people. We don't know which jobs will "survive," but people who understand themselves and their strengths will lead the change.</p>
+        <h1 class="hero__h1" style="margin-top: 24px;">Unreplaced</h1>
+        <p class="programs-hero__sub">Skills AI can't replace.</p>
+        <p class="body-lg programs-hero__lead">AI isn't so much eliminating jobs en masse as changing what work consists of, and people at the start of their careers feel it most. This program doesn't teach tools, which change quickly. It focuses on what stays: how you think, how you decide, how you read a situation, and how you work with people.</p>
+        <div class="hero__cta">
+          <a href="#editions" class="btn btn--primary">See upcoming editions</a>
+          <a href="#research" class="btn btn--ghost">What the research says</a>
+        </div>
+        <div class="facts">
+          <div><span class="facts__value">8</span><span class="facts__label">workshop sessions</span></div>
+          <div><span class="facts__value">1.5 h</span><span class="facts__label">each session</span></div>
+          <div><span class="facts__value">up to 12</span><span class="facts__label">people in a group</span></div>
+          <div><span class="facts__value">Free</span><span class="facts__label">no cost to take part</span></div>
         </div>
       </div>
       <div class="programs-hero__photo">
-        <img src="../../../programy/unreplaced/Unreplaced training 1.png" alt="A facilitator leading an Unreplaced session at a flip chart reading “Developing skills that AI cannot replace”" loading="lazy">
+        <img src="../../../programy/unreplaced/Unreplaced training 1.png" alt="A facilitator leading an Unreplaced session at a flip chart reading “Developing skills that AI cannot replace”">
       </div>
     </div>
   </header>
 
-  <!-- Who it's for -->
+  <!-- Editions -->
+  <section id="editions" class="section section--white">
+    <div class="wrap">
+      <div class="section__intro section__intro--left">
+        <span class="eyebrow">Upcoming editions</span>
+        <h2 class="h2" style="margin-top: 16px;">When, where and who it's for.</h2>
+        <p class="body-lg" style="margin-top: 16px;">The next Unreplaced cycles will take place in Kraków and online.</p>
+      </div>
+
+      <div class="editions">
+        <article class="edition">
+          <span class="edition__badge">Online · for students</span>
+          <h3 class="edition__title">Online cycle with the Jagiellonian University</h3>
+          <dl class="edition__meta">
+            <div class="edition__row"><dt>Who it's for</dt><dd><strong>Only for sociology students at the Jagiellonian University in Kraków</strong></dd></div>
+            <div class="edition__row"><dt>In partnership with</dt><dd>The Institute of Sociology at the Jagiellonian University in Kraków and a Jagiellonian University Student Research Club</dd></div>
+            <div class="edition__row"><dt>Format</dt><dd>Online sessions, 8 meetings, once a week</dd></div>
+            <div class="edition__row"><dt>Dates</dt><dd>Coming soon</dd></div>
+          </dl>
+          <span class="btn edition__cta edition__cta--soon">Sign-up opening soon</span>
+        </article>
+
+        <article class="edition">
+          <span class="edition__badge">Kraków · for students</span>
+          <h3 class="edition__title">Workshops at the Jagiellonian University</h3>
+          <dl class="edition__meta">
+            <div class="edition__row"><dt>Who it's for</dt><dd><strong>Only for sociology students at the Jagiellonian University in Kraków</strong></dd></div>
+            <div class="edition__row"><dt>In partnership with</dt><dd>The Institute of Sociology at the Jagiellonian University in Kraków and a Jagiellonian University Student Research Club</dd></div>
+            <div class="edition__row"><dt>Format</dt><dd>In-person workshop sessions in Kraków</dd></div>
+            <div class="edition__row"><dt>Dates</dt><dd>Coming soon</dd></div>
+          </dl>
+          <span class="btn edition__cta edition__cta--soon">Sign-up opening soon</span>
+        </article>
+
+        <article class="edition edition--open">
+          <span class="edition__badge">Online · open to everyone</span>
+          <h3 class="edition__title">Online cycle: open edition</h3>
+          <dl class="edition__meta">
+            <div class="edition__row"><dt>Who it's for</dt><dd>Anyone over 18 who would like to join</dd></div>
+            <div class="edition__row"><dt>Start</dt><dd><strong>January 2027</strong></dd></div>
+            <div class="edition__row"><dt>Dates</dt><dd><strong>Wednesdays, 18:00–19:30 Polish time</strong></dd></div>
+            <div class="edition__row"><dt>Format</dt><dd>Online sessions, 8 meetings, every two weeks</dd></div>
+          </dl>
+          <a href="https://forms.gle/pk1bfYUqbaxmxtte8" target="_blank" rel="noopener" class="btn btn--violet edition__cta">Sign up</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- What the research says -->
+  <section id="research" class="section section--cream">
+    <div class="wrap">
+      <div class="section__intro section__intro--left">
+        <span class="eyebrow">What the research says</span>
+        <h2 class="h2" style="margin-top: 16px;">The barrier isn't access to AI. It's not feeling ready to use AI.</h2>
+      </div>
+
+      <div class="gap">
+        <div>
+          <div class="gap__row">
+            <div class="gap__head">
+              <span class="gap__value">97%</span>
+              <span class="gap__label">of people aged 18–35 in Poland use AI tools</span>
+            </div>
+            <div class="gap__track" aria-hidden="true"><div class="gap__fill" style="width: 97%;"></div></div>
+          </div>
+          <div class="gap__row">
+            <div class="gap__head">
+              <span class="gap__value">12%</span>
+              <span class="gap__label">feel prepared to use them professionally</span>
+            </div>
+            <div class="gap__track" aria-hidden="true"><div class="gap__fill gap__fill--low" style="width: 12%;"></div></div>
+          </div>
+          <span class="source">Source: <a href="https://news.microsoft.com/source/emea/2025/07/generacja-ai-97-mlodych-polakow-korzysta-ze-sztucznej-inteligencji-ale-tylko-12-czuje-sie-gotowych-do-pracy-z-jej-wykorzystaniem/?lang=pl" target="_blank" rel="noopener">Talent Days and Microsoft, Generation AI, 2025</a></span>
+        </div>
+        <div class="gap__text">
+          <p>The tools are in widespread use. What's missing is something else: the ability to judge whether their output is reliable, and an understanding of what you bring to your work and what can be generated.</p>
+          <p>Gen Z is at once the fastest group to adopt AI and the most worried about its impact on the job market.</p>
+          <span class="source" style="margin-top: 14px;">Source: <a href="https://www.parp.gov.pl/component/content/article/90196:jak-ai-wplywa-na-rynek-pracy-mimo-leku-wsrod-mlodych-nowe-prognozy-sa-optymistyczne" target="_blank" rel="noopener">PARP, based on Hays and Randstad Workmonitor 2026</a></span>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="stat__value">37%</span>
+          <p class="stat__label">of young workers are in roles exposed to significant task change</p>
+          <span class="source"><a href="https://www.weforum.org/publications/artificial-intelligence-and-the-future-of-entry-level-work-a-framework-for-safeguarding-and-reinventing-early-career-pathways/" target="_blank" rel="noopener">World Economic Forum and PwC, 2026</a></span>
+        </div>
+        <div class="stat">
+          <span class="stat__value">28%</span>
+          <p class="stat__label">believe that within three years at least half of their skills will lose relevance</p>
+          <span class="source"><a href="https://www.weforum.org/publications/artificial-intelligence-and-the-future-of-entry-level-work-a-framework-for-safeguarding-and-reinventing-early-career-pathways/" target="_blank" rel="noopener">World Economic Forum and PwC, 2026</a></span>
+        </div>
+        <div class="stat">
+          <span class="stat__value">−7%</span>
+          <p class="stat__label">job postings for juniors in 2025, while postings for experienced professionals rose 4%</p>
+          <span class="source"><a href="https://www.weforum.org/publications/artificial-intelligence-and-the-future-of-entry-level-work-a-framework-for-safeguarding-and-reinventing-early-career-pathways/" target="_blank" rel="noopener">World Economic Forum and PwC, 2026</a></span>
+        </div>
+        <div class="stat">
+          <span class="stat__value">70%</span>
+          <p class="stat__label">of the skills used in most jobs will change by 2030</p>
+          <span class="source"><a href="https://economicgraph.linkedin.com/research/work-change-report" target="_blank" rel="noopener">LinkedIn Economic Graph, Work Change Report</a></span>
+        </div>
+        <div class="stat">
+          <span class="stat__value">6%</span>
+          <p class="stat__label">of young people's jobs are directly threatened by AI</p>
+          <span class="source"><a href="https://www.ilo.org/resource/news/youth-unemployment-rises-young-people-face-harder-road-decent-work" target="_blank" rel="noopener">International Labour Organization, 2026</a></span>
+        </div>
+        <div class="stat">
+          <span class="stat__value">12%</span>
+          <p class="stat__label">was the global youth unemployment rate in 2025</p>
+          <span class="source"><a href="https://www.ilo.org/resource/news/youth-unemployment-rises-young-people-face-harder-road-decent-work" target="_blank" rel="noopener">International Labour Organization, 2026</a></span>
+        </div>
+      </div>
+
+      <p class="takeaway">AI directly threatens only a small share of young people's jobs. Getting started is harder, though: in 2025, postings for juniors fell while those for experienced professionals rose.</p>
+      <details class="sources">
+        <summary>Data sources</summary>
+        <ul>
+          <li><a href="https://www.weforum.org/publications/artificial-intelligence-and-the-future-of-entry-level-work-a-framework-for-safeguarding-and-reinventing-early-career-pathways/" target="_blank" rel="noopener">World Economic Forum and PwC, Artificial Intelligence and the Future of Entry-Level Work, 2026</a></li>
+          <li><a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" target="_blank" rel="noopener">World Economic Forum, Future of Jobs Report 2025</a></li>
+          <li><a href="https://www.ilo.org/resource/news/youth-unemployment-rises-young-people-face-harder-road-decent-work" target="_blank" rel="noopener">International Labour Organization, Global Employment Trends for Youth 2026</a></li>
+          <li><a href="https://www.oecd.org/en/publications/2025/12/oecd-skills-outlook-2025_ac37c7d4.html" target="_blank" rel="noopener">OECD, Skills Outlook 2025</a></li>
+          <li><a href="https://economicgraph.linkedin.com/research/work-change-report" target="_blank" rel="noopener">LinkedIn Economic Graph, Work Change Report</a></li>
+          <li><a href="https://news.microsoft.com/annual-work-trend-index-2026" target="_blank" rel="noopener">Microsoft, Work Trend Index 2026</a></li>
+          <li><a href="https://news.microsoft.com/source/emea/2025/07/generacja-ai-97-mlodych-polakow-korzysta-ze-sztucznej-inteligencji-ale-tylko-12-czuje-sie-gotowych-do-pracy-z-jej-wykorzystaniem/?lang=pl" target="_blank" rel="noopener">Talent Days and Microsoft, Generacja AI: młodzi Polacy na cyfrowym rynku pracy, 2025 (in Polish)</a></li>
+          <li><a href="https://www.gov.pl/web/cyfryzacja/jak-generatywna-sztuczna-inteligencja-bedzie-ksztaltowac-polski-rynek-pracy2" target="_blank" rel="noopener">NASK and the ILO for the Polish Ministry of Digital Affairs, Generative AI and the Polish labour market, 2025 (in Polish)</a></li>
+          <li><a href="https://www.parp.gov.pl/component/content/article/90196:jak-ai-wplywa-na-rynek-pracy-mimo-leku-wsrod-mlodych-nowe-prognozy-sa-optymistyczne" target="_blank" rel="noopener">PARP, based on Hays and Randstad Workmonitor 2026 (in Polish)</a></li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- Scope -->
   <section class="section section--white">
-    <div class="wrap dla-kogo-grid">
-      <div class="format-box">
-        <ul class="format-box__list">
-          <li>an 8-session cycle</li>
-          <li>group of up to 12 people</li>
-          <li>sessions every two weeks</li>
-          <li>each session lasts 1.5 hours</li>
+    <div class="wrap scope">
+      <div>
+        <span class="eyebrow">Who it's for and why</span>
+        <h2 class="h2" style="margin-top: 16px;">Seven skills the reports identify as key.</h2>
+        <p class="body-lg" style="margin-top: 16px;">For people who feel uneasy about AI-driven change and would rather deal with it than pretend it isn't happening.</p>
+        <ul class="scope__list">
+          <li>Critical thinking</li>
+          <li>Creativity</li>
+          <li>Adaptability</li>
+          <li>Mental resilience</li>
+          <li>Communication and empathy</li>
+          <li>Initiative and ownership</li>
+          <li>Learning</li>
         </ul>
       </div>
-      <div class="section__intro section__intro--left" style="margin-bottom: 0;">
-        <span class="eyebrow">Who it's for</span>
-        <p class="body-lg" style="margin-top: 16px;">For people who feel uneasy about AI-driven change and would rather deal with it than pretend it isn't happening.</p>
-      </div>
+      <aside class="scope__not">
+        <h3>What we don't teach</h3>
+        <p>Prompting, how to operate AI tools, data analysis or cybersecurity. That's a deliberate choice: these skills are already widely available, and knowledge of any specific tool goes out of date within months.</p>
+        <p>AI appears in the program as a subject for reflection and as material for practising critical judgment. You work on situations from your own experience, in a stable group.</p>
+      </aside>
     </div>
   </section>
 
@@ -273,8 +665,11 @@
       <div class="quote-block">
         <p class="quote-block__text">"People often ask me: will AI take my job? The real question is: what do I bring that can't just be generated by AI? Most of us never had to ask ourselves that question, because doing our job well used to be enough. That era is ending."</p>
         <div class="quote-block__attr-row">
-          <img src="../../../Aga zielony.jpg" alt="Aga Skraburska" class="quote-block__avatar" loading="lazy">
-          <p class="quote-block__attr">— Aga Skraburska, Founder and Board President of The Conscious Human Foundation</p>
+          <img src="../../../Aga zielony.jpg" loading="lazy" alt="Aga Skraburska" class="quote-block__avatar">
+          <div>
+            <p class="quote-block__name">Aga Skraburska, author and facilitator of the program</p>
+            <p class="quote-block__bio">Founder and Board President of the Foundation. Graduate of the Institute of Sociology at the Jagiellonian University. A trainer and coach for twenty years, Head of Product Education at Nexthink.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -288,64 +683,87 @@
         <h2 class="h2" style="margin-top: 16px;">Eight sessions, one cycle.</h2>
       </div>
 
-      <div class="session">
-        <span class="session__num">01</span>
-        <div>
-          <h3 class="session__title">What's actually changing</h3>
-          <p class="session__desc">We start by getting the facts straight: what AI does well today, what it doesn't, and where its responsibility ends. Then it gets personal — you look at your own work and separate what's a task from what's you. For many people, this is the first moment unease turns into something concrete.</p>
+      <details class="session" open>
+        <summary><span class="session__num">01</span><h3 class="session__title">What's actually changing</h3></summary>
+        <div class="session__body">
+          <p class="session__desc">We start by getting the facts straight: what AI does well today, what it doesn't, and where its responsibility ends. Then we turn to your own situation: you look at which of your tasks AI could take over, and what depends on you: your judgment, your experience and your relationships with people. For many people, this is the first moment unease turns into something concrete.</p>
+          <p class="session__outcome"><strong>After this session:</strong> you can tell the scale of the direct threat apart from the narrowing of entry-level roles.</p>
         </div>
-      </div>
-      <div class="session">
-        <span class="session__num">02</span>
-        <div>
-          <h3 class="session__title">Critical thinking</h3>
+      </details>
+      <details class="session">
+        <summary><span class="session__num">02</span><h3 class="session__title">Critical thinking</h3></summary>
+        <div class="session__body">
           <p class="session__desc">When answers come instantly and sound confident, the biggest risk isn't the machine getting it wrong — it's that we stop checking. In this session we practise asking better questions, spotting our own assumptions, and making decisions when the information is incomplete, which is the rule, not the exception.</p>
+          <p class="session__outcome"><strong>After this session:</strong> you can assess how reliable an AI output is and know what to check before making a decision.</p>
         </div>
-      </div>
-      <div class="session">
-        <span class="session__num">03</span>
-        <div>
-          <h3 class="session__title">Creativity</h3>
+      </details>
+      <details class="session">
+        <summary><span class="session__num">03</span><h3 class="session__title">Creativity</h3></summary>
+        <div class="session__body">
           <p class="session__desc">Creativity isn't artistic talent. It's the ability to connect things that don't seem to belong together, and to notice a problem before anyone's put it into words. AI models are great at generating variations on what already exists. They're much weaker at asking whether we're even working on the right problem. That's what we practise here.</p>
+          <p class="session__outcome"><strong>After this session:</strong> you can propose non-obvious solutions and spot a problem before anyone has put it into words.</p>
         </div>
-      </div>
-      <div class="session">
-        <span class="session__num">04</span>
-        <div>
-          <h3 class="session__title">Adaptability</h3>
+      </details>
+      <details class="session">
+        <summary><span class="session__num">04</span><h3 class="session__title">Adaptability</h3></summary>
+        <div class="session__body">
           <p class="session__desc">Change rarely hurts on its own. What hurts is losing predictability and the sense of being good at something — after years of competence, you're a beginner again. This session is about getting through that period without faking enthusiasm or gritting your teeth. About learning faster, and making peace with a stretch of genuine discomfort.</p>
+          <p class="session__outcome"><strong>After this session:</strong> you have a method for working through situations with no ready-made procedure.</p>
         </div>
-      </div>
-      <div class="session">
-        <span class="session__num">05</span>
-        <div>
-          <h3 class="session__title">Mental resilience</h3>
+      </details>
+      <details class="session">
+        <summary><span class="session__num">05</span><h3 class="session__title">Mental resilience</h3></summary>
+        <div class="session__body">
           <p class="session__desc">It's hard to think clearly with constant background worry about the future. We talk about what actually builds stability: what's within your control and what isn't, how to tell worry apart from information, and where to draw your sense of worth from when work stops providing it. No forced reassurance.</p>
+          <p class="session__outcome"><strong>After this session:</strong> you can tell worry apart from information and act under uncertainty.</p>
         </div>
-      </div>
-      <div class="session">
-        <span class="session__num">06</span>
-        <div>
-          <h3 class="session__title">Communication and empathy</h3>
+      </details>
+      <details class="session">
+        <summary><span class="session__num">06</span><h3 class="session__title">Communication and empathy</h3></summary>
+        <div class="session__body">
           <p class="session__desc">The more gets automated, the more depends on conversation — on whether you can persuade someone, listen carefully, or say a hard thing in a way the other person can actually hear. It's the oldest skill we have, and right now it's also the most underrated. We practise it on situations from your own work.</p>
+          <p class="session__outcome"><strong>After this session:</strong> you're ready for difficult conversations, careful listening and working in a group.</p>
         </div>
-      </div>
-      <div class="session">
-        <span class="session__num">07</span>
-        <div>
-          <h3 class="session__title">Initiative and ownership</h3>
+      </details>
+      <details class="session">
+        <summary><span class="session__num">07</span><h3 class="session__title">Initiative and ownership</h3></summary>
+        <div class="session__body">
           <p class="session__desc">This isn't about starting a company. It's about a mindset: noticing a problem and dealing with it before anyone tells you to. In a world where simply following instructions loses value the fastest, that's one of the few things that genuinely strengthens your position. We work on what's been holding you back from it.</p>
+          <p class="session__outcome"><strong>After this session:</strong> you take initiative without being asked and deal with the problems you notice.</p>
         </div>
-      </div>
-      <div class="session">
-        <span class="session__num">08</span>
-        <div>
-          <h3 class="session__title">Your plan and your group</h3>
+      </details>
+      <details class="session">
+        <summary><span class="session__num">08</span><h3 class="session__title">Your plan and your group</h3></summary>
+        <div class="session__body">
           <p class="session__desc">At the end, you put it all into a simple plan: what you're learning, what you're changing about how you work, and how you'll know it's heading the right way. We're also honest that resolutions like this usually fade within two weeks if no one else knows about them — which is why we finish as a group, not alone.</p>
+          <p class="session__outcome"><strong>After this session:</strong> you have a personal development plan and a method for learning new skills on your own.</p>
         </div>
-      </div>
+      </details>
 
       <p class="disclaimer">These workshops are educational and developmental in nature. We do not provide professional or legal advice.</p>
+    </div>
+  </section>
+
+  <!-- Our research -->
+  <section class="section section--sage">
+    <div class="wrap">
+      <div class="study">
+        <div>
+          <span class="eyebrow">Our research</span>
+          <h2 class="h2" style="margin-top: 16px;">A program that is itself being studied.</h2>
+          <p class="body-lg" style="margin-top: 16px;">Alongside the workshops, we also conduct research: we look at how young adults perceive AI's impact on their own professional future, and whether taking part in Unreplaced changes that perception. We study this in every edition.</p>
+          <p class="study__note">Taking part in the research is voluntary and independent of taking part in the sessions. Data is collected in anonymised form, based on informed consent. In the editions with the Jagiellonian University, the Institute of Sociology provides academic supervision and the results belong to the Institute: the Foundation has no influence over their content or conclusions.</p>
+        </div>
+        <div>
+          <h3 class="eyebrow" style="margin-bottom: 16px;">The questions we start from</h3>
+          <ol class="study__questions">
+            <li>How do young adults define the threat AI poses to their own career path?</li>
+            <li>Which skills do they consider hard to replace and which at risk, and how far do those views match market data?</li>
+            <li>How can we explain very high adoption of AI tools alongside a very low sense of readiness to work with them?</li>
+            <li>Does taking part in the program change the level of perceived threat and the sense of agency?</li>
+          </ol>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -353,8 +771,8 @@
   <div class="contact-band">
     <div class="contact-band__inner">
       <h2 class="contact-band__h2">Find out what you bring.</h2>
-      <p class="contact-band__sub">Write to us and ask about the next Unreplaced cycle.</p>
-      <a href="mailto:info@conscioushuman.pl" class="btn btn--primary">Ask about the next round →</a>
+      <a href="#editions" class="btn btn--on-primary">See upcoming editions →</a>
+      <p class="contact-band__mail">Any questions? <a href="mailto:info@conscioushuman.pl">info@conscioushuman.pl</a></p>
     </div>
   </div>
 
