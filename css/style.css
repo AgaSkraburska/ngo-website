@@ -106,6 +106,13 @@ em {
 }
 .nav__link:hover { color: var(--primary); }
 
+.nav__actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 16px;
+}
+
 /* ── Buttons ── */
 .btn {
   display: inline-flex;
@@ -639,6 +646,12 @@ em {
 }
 
 @media (max-width: 480px) {
+  .nav__inner { gap: 8px; }
+  .nav__logo { font-size: 17px; line-height: 1.15; white-space: normal; }
+  .nav__actions { gap: 8px; }
+  .lang-switch { gap: 4px; }
+  .btn--nav { font-size: 13px; padding: 8px 10px; }
+
   .hero { padding: 64px 0 72px; }
   .hero__cta { flex-direction: column; }
   .btn--primary, .btn--ghost { width: 100%; justify-content: center; }
