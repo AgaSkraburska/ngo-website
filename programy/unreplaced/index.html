@@ -342,6 +342,14 @@
       color: var(--primary);
     }
     .session__body { padding: 0 40px 28px 64px; max-width: 860px; }
+    .session__def {
+      font-family: var(--font-display);
+      font-size: 18px;
+      line-height: 1.5;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .session__def strong { font-weight: 600; color: var(--primary); }
     .session__desc { font-size: 16px; line-height: 1.7; color: var(--ink-mute); }
     .session__outcome {
       font-size: 15px;
@@ -632,11 +640,14 @@
 
   <!-- Zakres programu -->
   <section class="section section--white">
-    <div class="wrap scope">
-      <div>
+    <div class="wrap">
+      <div class="section__intro section__intro--left">
         <span class="eyebrow">Dla kogo i po co</span>
-        <h2 class="h2" style="margin-top: 16px;">Siedem kompetencji, które raporty wskazują jako kluczowe.</h2>
-        <p class="body-lg" style="margin-top: 16px;">Dla osób, które czują niepokój wobec zmian napędzanych przez AI i wolą się nimi zająć, niż udawać, że ich nie ma.</p>
+        <h2 class="h2" style="margin-top: 16px;">Kluczowe kompetencje psychospołeczne według badań.</h2>
+      </div>
+      <div class="scope">
+      <div>
+        <p class="body-lg">Dla osób, które czują niepokój wobec zmian napędzanych przez AI i wolą się nimi zająć, niż udawać, że ich nie ma.</p>
         <ul class="scope__list">
           <li>Krytyczne myślenie</li>
           <li>Kreatywność</li>
@@ -649,9 +660,9 @@
       </div>
       <aside class="scope__not">
         <h3>Czego tu nie uczymy</h3>
-        <p>Promptowania, obsługi narzędzi AI, analizy danych ani cyberbezpieczeństwa. To świadomy wybór: te umiejętności są już szeroko dostępne, a znajomość konkretnego narzędzia dezaktualizuje się w miesiące.</p>
-        <p>AI pojawia się w programie jako temat do namysłu i materiał do ćwiczenia krytycznej oceny. Pracujesz na sytuacjach z własnego doświadczenia, w stałej grupie.</p>
+        <p>Kompetencji techniczno-cyfrowych, czyli obsługi narzędzi AI, pracy z danymi i cyberbezpieczeństwa. Badania również wymieniają je wśród kluczowych, ale pomijamy je świadomie, bo uczy ich już wiele kierunków studiów i kursów, a wiedza o konkretnych narzędziach szybko się dezaktualizuje.</p>
       </aside>
+      </div>
     </div>
   </section>
 
@@ -682,56 +693,63 @@
       <details class="session" open>
         <summary><span class="session__num">01</span><h3 class="session__title">Co się naprawdę zmienia</h3></summary>
         <div class="session__body">
-          <p class="session__desc">Zaczynamy od uporządkowania faktów. Co AI robi dziś dobrze, czego nie robi i gdzie kończy się jej odpowiedzialność. Potem przechodzimy do Twojej sytuacji: sprawdzasz, które z Twoich zadań AI może przejąć, a co zależy od Ciebie: od Twojego osądu, doświadczenia i relacji z ludźmi. Dla wielu osób to pierwszy moment, w którym niepokój zamienia się w konkret.</p>
+          <p class="session__desc">Zaczynamy od uporządkowania faktów. Co AI robi dziś dobrze, czego nie robi i gdzie kończy się jej odpowiedzialność. Potem przechodzimy do Twojej sytuacji: sprawdzasz, które z Twoich zadań, na studiach czy w pracy, AI może przejąć, a co zależy od Ciebie: od Twojego osądu, doświadczenia i relacji z ludźmi. Dla wielu osób to pierwszy moment, w którym niepokój zamienia się w konkret.</p>
           <p class="session__outcome"><strong>Po spotkaniu:</strong> odróżniasz skalę bezpośredniego zagrożenia od zawężania się stanowisk wejściowych.</p>
         </div>
       </details>
       <details class="session">
         <summary><span class="session__num">02</span><h3 class="session__title">Krytyczne myślenie</h3></summary>
         <div class="session__body">
-          <p class="session__desc">Kiedy odpowiedzi są natychmiastowe i brzmią pewnie, największym ryzykiem nie jest błąd maszyny. Jest nim to, że przestajemy sprawdzać. Na tym spotkaniu ćwiczymy zadawanie lepszych pytań, rozpoznawanie własnych założeń i podejmowanie decyzji wtedy, gdy dane są niepełne, a taka sytuacja jest regułą, nie wyjątkiem.</p>
+          <p class="session__def">To zdolność oceny wiarygodności informacji, rozpoznawania własnych założeń i podejmowania decyzji przy niepełnych danych.</p>
+          <p class="session__desc">Kiedy odpowiedzi są natychmiastowe i brzmią pewnie, największym ryzykiem nie jest błąd maszyny, tylko to, że przestajemy sprawdzać. Ćwiczymy zadawanie lepszych pytań i ocenę wyników generowanych przez AI na materiale z narzędzi, z których korzystasz na co dzień.</p>
           <p class="session__outcome"><strong>Po spotkaniu:</strong> oceniasz wiarygodność wyniku z AI i wiesz, co sprawdzić przed podjęciem decyzji.</p>
         </div>
       </details>
       <details class="session">
         <summary><span class="session__num">03</span><h3 class="session__title">Kreatywność</h3></summary>
         <div class="session__body">
-          <p class="session__desc">Kreatywność to nie talent plastyczny. To zdolność łączenia rzeczy, które pozornie do siebie nie pasują, i zauważania problemu, zanim ktoś go sformułuje. Modele AI świetnie tworzą warianty tego, co już istnieje. Znacznie słabiej radzą sobie z pytaniem, czy w ogóle zajmujemy się właściwą sprawą. Tego się tu uczymy.</p>
+          <p class="session__def">To zdolność łączenia elementów pozornie do siebie niepasujących i rozpoznawania problemu, zanim ktoś go sformułuje.</p>
+          <p class="session__desc">To nie talent plastyczny. Modele AI świetnie tworzą warianty tego, co już istnieje, ale znacznie słabiej radzą sobie z pytaniem, czy w ogóle zajmujemy się właściwą sprawą. Na tym spotkaniu ćwiczymy właśnie to pytanie.</p>
           <p class="session__outcome"><strong>Po spotkaniu:</strong> proponujesz nieoczywiste rozwiązania i rozpoznajesz problem, zanim ktoś go sformułuje.</p>
         </div>
       </details>
       <details class="session">
         <summary><span class="session__num">04</span><h3 class="session__title">Adaptacyjność</h3></summary>
         <div class="session__body">
-          <p class="session__desc">Zmiana rzadko boli sama w sobie. Boli utrata przewidywalności i poczucia kompetencji, bo przez lata byliśmy w czymś dobrzy, a teraz znów jesteśmy początkujący. To spotkanie jest o tym, jak przechodzić przez taki okres bez udawania entuzjazmu i bez zaciskania zębów. O uczeniu się szybciej i o godzeniu się z tym, że przez chwilę będzie niewygodnie.</p>
+          <p class="session__def">To zdolność działania w sytuacjach nierutynowych, dla których nie istnieje gotowa procedura.</p>
+          <p class="session__desc">Zmiana rzadko boli sama w sobie. Boli to, że to, w czym byliśmy dobrzy, przestaje wystarczać, i znów jesteśmy początkujący. Pracujemy nad tym, jak przejść przez taki okres bez udawania entuzjazmu i bez zaciskania zębów, i jak szybciej uczyć się w nowych warunkach.</p>
           <p class="session__outcome"><strong>Po spotkaniu:</strong> masz metodę pracy z sytuacją, dla której nie istnieje gotowa procedura.</p>
         </div>
       </details>
       <details class="session">
         <summary><span class="session__num">05</span><h3 class="session__title">Odporność psychiczna</h3></summary>
         <div class="session__body">
-          <p class="session__desc">Trudno myśleć jasno, gdy w tle stale pracuje niepokój o przyszłość. Rozmawiamy o tym, co realnie wzmacnia stabilność: co jest pod Twoją kontrolą, a co nie, jak odróżnić niepokój od informacji i skąd czerpać poczucie wartości, kiedy praca przestaje je dawać. Bez pocieszania na siłę.</p>
+          <p class="session__def">To zdolność zachowania jasności myślenia i poczucia sprawczości mimo niepewności co do przyszłości, zarówno zawodowej, jak i prywatnej.</p>
+          <p class="session__desc">Rozmawiamy o tym, co realnie wzmacnia stabilność: co jest pod Twoją kontrolą, a co nie, jak odróżnić niepokój od informacji i skąd czerpać poczucie wartości niezależne od ocen, stanowiska czy roli zawodowej. Bez pocieszania na siłę.</p>
           <p class="session__outcome"><strong>Po spotkaniu:</strong> odróżniasz niepokój od informacji i potrafisz działać w warunkach niepewności.</p>
         </div>
       </details>
       <details class="session">
         <summary><span class="session__num">06</span><h3 class="session__title">Komunikacja i empatia</h3></summary>
         <div class="session__body">
-          <p class="session__desc">Im więcej rzeczy robi się automatycznie, tym więcej zależy od rozmowy. Od tego, czy potrafisz kogoś przekonać, uważnie wysłuchać, powiedzieć trudną rzecz tak, żeby druga strona jej nie odrzuciła. To najstarsza kompetencja, jaką mamy, i akurat ta jest dziś najbardziej niedoceniana. Ćwiczymy ją na sytuacjach z Twojej pracy.</p>
+          <p class="session__def">To zdolność rozumienia emocji i perspektywy drugiej osoby, uważnego słuchania, prowadzenia trudnych rozmów, przekonywania i współpracy w zespole.</p>
+          <p class="session__desc">Ćwiczymy na sytuacjach z Twojej pracy i nauki: jak powiedzieć trudną rzecz tak, żeby druga strona jej nie odrzuciła, jak naprawdę usłyszeć, co ktoś mówi, i jak zrozumieć perspektywę drugiej osoby, nawet jeśli się z nią nie zgadzasz.</p>
           <p class="session__outcome"><strong>Po spotkaniu:</strong> jesteś gotowy lub gotowa do trudnych rozmów, uważnego słuchania i współpracy w grupie.</p>
         </div>
       </details>
       <details class="session">
         <summary><span class="session__num">07</span><h3 class="session__title">Przedsiębiorczość i inicjatywa</h3></summary>
         <div class="session__body">
-          <p class="session__desc">Nie chodzi o zakładanie firmy. Chodzi o postawę: zauważam problem i zajmuję się nim, zanim ktoś mi każe. W świecie, w którym samo wykonywanie poleceń traci wartość najszybciej, to jedna z niewielu rzeczy, które realnie zwiększają Twoją pozycję. Pracujemy nad tym, co Cię przed tym powstrzymuje.</p>
+          <p class="session__def">To umiejętność dostrzegania szans i zamieniania pomysłów w działanie, także wtedy, gdy trzeba zorganizować pracę innych, a także gotowość do zajęcia się problemem bez polecenia i wzięcia odpowiedzialności za rezultat.</p>
+          <p class="session__desc">Nie chodzi o zakładanie firmy, tylko o postawę wobec pracy i nauki. W świecie, w którym samo wykonywanie poleceń traci wartość najszybciej, to jedna z niewielu rzeczy, które realnie zwiększają Twoją pozycję. Pracujemy nad tym, co Cię przed tym powstrzymuje.</p>
           <p class="session__outcome"><strong>Po spotkaniu:</strong> podejmujesz inicjatywę bez polecenia i zajmujesz się zauważonym problemem.</p>
         </div>
       </details>
       <details class="session">
-        <summary><span class="session__num">08</span><h3 class="session__title">Twój plan i grupa</h3></summary>
+        <summary><span class="session__num">08</span><h3 class="session__title">Uczenie się – Twój plan i grupa</h3></summary>
         <div class="session__body">
-          <p class="session__desc">Na koniec składasz to w prosty plan: czego się uczysz, co zmieniasz w sposobie pracy, po czym poznasz, że idzie w dobrą stronę. Rozmawiamy też szczerze o tym, że takie postanowienia najczęściej gasną po dwóch tygodniach, jeśli nikt o nich nie wie. Dlatego kończymy w grupie, a nie w pojedynkę.</p>
+          <p class="session__def">To zdolność samodzielnego i powtarzalnego przyswajania nowych umiejętności.</p>
+          <p class="session__desc">Na koniec składasz wszystko w prosty plan: czego się uczysz, co zmieniasz w sposobie pracy lub nauki i po czym poznasz, że idzie w dobrą stronę. Rozmawiamy też szczerze o tym, że takie postanowienia najczęściej gasną po dwóch tygodniach, jeśli nikt o nich nie wie. Dlatego na warsztatach pracujemy w grupie i to w grupie umawiamy się na następne kroki, a nie w pojedynkę.</p>
           <p class="session__outcome"><strong>Po spotkaniu:</strong> masz indywidualny plan rozwoju i metodę samodzielnego uczenia się nowych umiejętności.</p>
         </div>
       </details>
