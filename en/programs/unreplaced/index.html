@@ -244,10 +244,12 @@
     /* ── Scope ── */
     .scope {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 0.95fr 1.05fr;
       gap: 56px;
-      align-items: start;
+      align-items: stretch;
+      margin-top: 16px;
     }
+    .scope .h2 { text-wrap: balance; }
     .scope__list {
       list-style: none;
       display: flex;
@@ -640,13 +642,11 @@
   <!-- Scope -->
   <section class="section section--white">
     <div class="wrap">
-      <div class="section__intro section__intro--left">
-        <span class="eyebrow">Who it's for and why</span>
-        <h2 class="h2" style="margin-top: 16px;">Key psychosocial skills according to research.</h2>
-      </div>
+      <span class="eyebrow">Who it's for and why</span>
       <div class="scope">
       <div>
-        <p class="body-lg">For people who feel uneasy about AI-driven change and would rather deal with it than pretend it isn't happening.</p>
+        <h2 class="h2">Key psychosocial skills according to research.</h2>
+        <p class="body-lg" style="margin-top: 16px;">For people who feel uneasy about AI-driven change and would rather deal with it than pretend it isn't happening.</p>
         <ul class="scope__list">
           <li>Critical thinking</li>
           <li>Creativity</li>
@@ -660,6 +660,7 @@
       <aside class="scope__not">
         <h3>What we don't teach</h3>
         <p>Technical and digital skills: using AI tools, working with data and cybersecurity. Research lists them as key too, but we leave them out on purpose, because they're already widely taught and specific tools quickly go out of date.</p>
+        <p>AI appears in the program as a subject for reflection and as material for practising critical judgment. You work on situations from your own experience, in a stable group.</p>
       </aside>
       </div>
     </div>
