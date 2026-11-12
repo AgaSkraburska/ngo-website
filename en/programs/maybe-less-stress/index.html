@@ -289,7 +289,7 @@
     /* ── Facts strip ── */
     .facts {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 16px;
       margin-top: 40px;
       padding-top: 24px;
@@ -299,7 +299,7 @@
     .facts__value {
       display: block;
       font-family: var(--font-display);
-      font-size: 26px;
+      font-size: 22px;
       line-height: 1.1;
       letter-spacing: -0.02em;
       color: var(--primary);
@@ -323,7 +323,7 @@
       .session__body { padding: 0 0 24px 52px; }
     }
     @media (max-width: 480px) {
-      .facts { grid-template-columns: 1fr 1fr; }
+      .facts { grid-template-columns: 1fr; gap: 12px; }
       .session__body { padding-left: 0; }
       .quote-block__attr-row { align-items: flex-start; }
       .btn--on-primary { width: 100%; }
@@ -366,10 +366,9 @@
           <a href="#research" class="btn btn--ghost">What the research says</a>
         </div>
         <div class="facts">
-          <div><span class="facts__value">8</span><span class="facts__label">workshop sessions</span></div>
-          <div><span class="facts__value">1.5 h</span><span class="facts__label">each session</span></div>
-          <div><span class="facts__value">up to 12</span><span class="facts__label">people in a group</span></div>
-          <div><span class="facts__value">Free</span><span class="facts__label">no cost to take part</span></div>
+          <div><span class="facts__value">YouTube</span><span class="facts__label">videos at your own pace</span></div>
+          <div><span class="facts__value">up to 12</span><span class="facts__label">workshops in a small group</span></div>
+          <div><span class="facts__value">1:1</span><span class="facts__label">individual coaching</span></div>
         </div>
       </div>
       <div class="programs-hero__photo">
