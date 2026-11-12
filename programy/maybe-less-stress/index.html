@@ -177,9 +177,6 @@
     .source a:hover { color: var(--primary); }
     .gap .source { margin-top: 20px; }
 
-    .card--green { background: var(--primary); color: #fff; }
-    .card--green .card__eyebrow { color: var(--on-primary-mute); }
-    .card--green .card__body { color: rgba(255,255,255,0.8); }
 
     .takeaway {
       font-family: var(--font-display);
@@ -289,6 +286,32 @@
     .contact-band__mail { font-size: 15px; color: var(--on-primary-mute); margin-top: 20px; }
     .contact-band__mail a { color: #fff; }
 
+    /* ── Facts strip ── */
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--hairline);
+      max-width: 560px;
+    }
+    .facts__value {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 26px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--primary);
+    }
+    .facts__label {
+      display: block;
+      font-size: 13px;
+      line-height: 1.35;
+      color: var(--ink-mute);
+      margin-top: 6px;
+    }
+
     @media (max-width: 900px) {
       .programs-hero { padding: 56px 0; }
       .programs-hero__grid,
@@ -300,6 +323,7 @@
       .session__body { padding: 0 0 24px 52px; }
     }
     @media (max-width: 480px) {
+      .facts { grid-template-columns: 1fr 1fr; }
       .session__body { padding-left: 0; }
       .quote-block__attr-row { align-items: flex-start; }
       .btn--on-primary { width: 100%; }
@@ -340,6 +364,12 @@
         <div class="hero__cta">
           <a href="#zapisy" class="btn btn--primary">Zapisz się</a>
           <a href="#badania" class="btn btn--ghost">Co mówią badania</a>
+        </div>
+        <div class="facts">
+          <div><span class="facts__value">8</span><span class="facts__label">spotkań warsztatowych</span></div>
+          <div><span class="facts__value">1,5 h</span><span class="facts__label">każde spotkanie</span></div>
+          <div><span class="facts__value">do 12</span><span class="facts__label">osób w grupie</span></div>
+          <div><span class="facts__value">0 zł</span><span class="facts__label">udział jest bezpłatny</span></div>
         </div>
       </div>
       <div class="programs-hero__photo">
@@ -399,7 +429,7 @@
     <div class="wrap">
       <div class="section__intro section__intro--left">
         <span class="eyebrow">Co mówią badania</span>
-        <h2 class="h2" style="margin-top: 16px;">Stres związany z pracą dotyczy prawie co trzeciej osoby.</h2>
+        <h2 class="h2" style="margin-top: 16px;">Stres związany z pracą<br>dotyczy co trzeciej osoby.</h2>
       </div>
 
       <div class="gap">
@@ -441,7 +471,7 @@
           <span class="card__eyebrow">Ty</span>
           <p class="card__body">Twoja historia, to, czego pragniesz, czasem to, czego się boisz, i sposób, w jaki reagujesz na otaczający Cię świat.</p>
         </div>
-        <div class="card card--green">
+        <div class="card card--violet">
           <span class="card__eyebrow">Twoja rola</span>
           <p class="card__body">To, czego Ty i inni oczekujecie od roli, którą pełnisz.</p>
         </div>
