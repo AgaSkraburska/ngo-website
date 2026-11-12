@@ -4,16 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MayBe Less Stress — Programs — The Conscious Human</title>
-  <meta name="description" content="A free 8-session workshop cycle on burnout and stress prevention. Groups of up to 12, sessions every two weeks.">
+  <meta name="description" content="MayBe Less Stress: a program about chronic stress. Individual coaching and small-group workshops, 8 sessions every two weeks.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="../../../favicon.png">
   <link rel="stylesheet" href="../../../css/style.css">
   <style>
+    section[id] { scroll-margin-top: calc(var(--nav-height) + 16px); }
+
     /* ── Program hero ── */
     .programs-hero {
-      padding: 96px 0 72px;
+      padding: 80px 0 72px;
       background:
         radial-gradient(ellipse 55% 65% at 78% 35%, rgba(238,243,238,0.95) 0%, transparent 65%),
         radial-gradient(ellipse 40% 45% at 15% 75%, rgba(61,31,92,0.07) 0%, transparent 60%),
@@ -37,46 +39,161 @@
       object-fit: cover;
       display: block;
     }
+    .programs-hero__sub {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(22px, 2.4vw, 30px);
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: var(--violet);
+      margin-top: 10px;
+    }
+    .programs-hero__lead { margin-top: 24px; max-width: 560px; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .back-link:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-    /* ── Who it's for grid ── */
-    .dla-kogo-grid {
+    /* ── Sign-up options ── */
+    .editions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+    .edition {
+      display: flex;
+      flex-direction: column;
+      border-radius: 20px;
+      padding: 32px 28px;
+      background: var(--canvas);
+      border: 1px solid var(--hairline);
+      box-shadow: 0 12px 32px rgba(26,61,43,0.07);
+    }
+    .edition__badge {
+      align-self: flex-start;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--terra);
+      background: rgba(181,85,42,0.1);
+      border-radius: 100px;
+      padding: 5px 12px;
+    }
+    .edition--open .edition__badge {
+      color: var(--violet);
+      background: var(--violet-light);
+    }
+    .edition__title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      color: var(--primary);
+      margin-top: 18px;
+    }
+    .edition__meta { margin: 20px 0 28px; flex: 1; }
+    .edition__row {
+      padding: 12px 0;
+      border-top: 1px solid var(--hairline);
+    }
+    .edition__row dt {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .edition__row dd {
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--ink);
+      margin-top: 3px;
+    }
+    .edition__cta {
+      white-space: normal;
+      text-align: center;
+      font-size: 15px;
+      padding: 13px 20px;
+    }
+    .btn--violet {
+      background: var(--violet);
+      color: #fff;
+    }
+    .btn--violet:hover { background: var(--violet-mid); }
+    .btn--on-primary { color: var(--primary); background: #fff; font-size: 16px; padding: 14px 28px; }
+    .btn--on-primary:hover { background: var(--canvas-sage); }
+
+    /* ── Research ── */
+    .gap {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
       gap: 56px;
       align-items: center;
-    }
-
-    /* ── Format box ── */
-    .format-box {
-      background: var(--canvas-sage);
+      background: var(--canvas);
       border-radius: 20px;
       padding: 40px 44px;
+      box-shadow: 0 12px 32px rgba(26,61,43,0.07);
     }
-    .format-box__list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px 24px;
+    .gap__row + .gap__row { margin-top: 24px; }
+    .gap__head { display: flex; align-items: baseline; gap: 14px; }
+    .gap__value {
+      font-family: var(--font-display);
+      font-size: clamp(44px, 5vw, 64px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--primary);
+      flex-shrink: 0;
     }
-    .format-box__list li {
-      font-size: 15px;
+    .gap__label { font-size: 16px; line-height: 1.4; color: var(--ink-mute); }
+    .gap__track {
+      height: 10px;
+      margin-top: 10px;
+      border-radius: 4px;
+      background: var(--canvas-sage);
+      overflow: hidden;
+    }
+    .gap__fill { height: 100%; border-radius: 0 4px 4px 0; background: var(--primary); }
+    .gap__fill--load { background: var(--terra); }
+    .gap__text p { font-size: 17px; line-height: 1.65; color: var(--ink-mute); }
+    .gap__text p + p { margin-top: 14px; }
+    .gap__text strong { color: var(--ink); font-weight: 700; }
+
+    .source {
+      display: block;
+      font-size: 13px;
+      line-height: 1.4;
       color: var(--ink-mute);
-      padding-left: 20px;
-      position: relative;
     }
-    .format-box__list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 9px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--terra);
+    .source a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+    .source a:hover { color: var(--primary); }
+    .gap .source { margin-top: 20px; }
+
+    .card--green { background: var(--primary); color: #fff; }
+    .card--green .card__eyebrow { color: var(--on-primary-mute); }
+    .card--green .card__body { color: rgba(255,255,255,0.8); }
+
+    .takeaway {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(20px, 2vw, 25px);
+      line-height: 1.4;
+      letter-spacing: -0.015em;
+      color: var(--violet);
+      max-width: 820px;
+      margin-top: 40px;
     }
 
-    /* ── Quote block ── */
-    .quote-block { max-width: 720px; margin: 0 auto; text-align: center; }
+    /* ── Quote ── */
+    .quote-block { max-width: 760px; margin: 0 auto; text-align: center; }
     .quote-block__text {
       font-family: var(--font-display);
       font-style: italic;
@@ -90,29 +207,41 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      margin-top: 20px;
-    }
-    .quote-block__attr {
-      font-size: 15px;
-      color: var(--ink-mute);
+      gap: 16px;
+      margin-top: 28px;
+      text-align: left;
     }
     .quote-block__avatar {
-      width: 44px;
-      height: 44px;
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
       object-fit: cover;
       flex-shrink: 0;
     }
+    .quote-block__name { font-size: 15px; font-weight: 700; color: var(--ink); }
+    .quote-block__bio { font-size: 14px; line-height: 1.5; color: var(--ink-mute); margin-top: 2px; }
 
     /* ── Session list ── */
-    .session {
+    .session { border-bottom: 1px solid var(--hairline); }
+    .session:first-of-type { border-top: 1px solid var(--hairline); }
+    .session summary {
       display: flex;
+      align-items: baseline;
       gap: 28px;
-      padding: 32px 0;
-      border-bottom: 1px solid var(--hairline);
+      padding: 22px 0;
+      cursor: pointer;
+      list-style: none;
     }
-    .session:first-child { border-top: 1px solid var(--hairline); }
+    .session summary::-webkit-details-marker { display: none; }
+    .session summary::after {
+      content: "+";
+      margin-left: auto;
+      font-size: 24px;
+      line-height: 1;
+      color: var(--ink-mute);
+    }
+    .session[open] summary::after { content: "–"; }
+    .session summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
     .session__num {
       font-family: var(--font-display);
       font-size: 22px;
@@ -125,18 +254,14 @@
       font-weight: 600;
       font-size: 20px;
       color: var(--primary);
-      margin-bottom: 10px;
     }
-    .session__desc {
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--ink-mute);
-    }
+    .session__body { padding: 0 40px 28px 64px; max-width: 860px; }
+    .session__desc { font-size: 16px; line-height: 1.7; color: var(--ink-mute); }
 
     /* ── Disclaimer ── */
     .disclaimer {
       font-size: 13px;
-      color: #9a948c;
+      color: var(--ink-mute);
       max-width: 720px;
       margin-top: 28px;
       line-height: 1.6;
@@ -151,7 +276,7 @@
         var(--primary);
       text-align: center;
     }
-    .contact-band__inner { max-width: 680px; margin: 0 auto; }
+    .contact-band__inner { max-width: 720px; margin: 0 auto; }
     .contact-band__h2 {
       font-family: var(--font-display);
       font-weight: 400;
@@ -159,36 +284,25 @@
       line-height: 1.15;
       letter-spacing: -0.03em;
       color: #fff;
-      margin: 0;
+      margin: 0 0 32px;
     }
-    .contact-band__sub {
-      font-size: 18px;
-      line-height: 1.6;
-      color: var(--on-primary-mute);
-      margin: 24px auto 40px;
-      max-width: 520px;
-      white-space: nowrap;
-    }
-
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--primary);
-      text-decoration: none;
-    }
-    .back-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .contact-band__mail { font-size: 15px; color: var(--on-primary-mute); margin-top: 20px; }
+    .contact-band__mail a { color: #fff; }
 
     @media (max-width: 900px) {
+      .programs-hero { padding: 56px 0; }
+      .programs-hero__grid,
+      .gap { grid-template-columns: 1fr; gap: 32px; }
+      .editions { grid-template-columns: 1fr; }
+      .gap { padding: 28px 24px; }
       .contact-band { padding: 80px 24px; }
-      .contact-band__sub { white-space: normal; }
-      .format-box { padding: 32px 28px; }
-      .session { gap: 16px; }
-      .programs-hero__grid { grid-template-columns: 1fr; gap: 32px; }
-      .dla-kogo-grid { grid-template-columns: 1fr; gap: 32px; }
-      .format-box__list { grid-template-columns: 1fr; }
+      .session summary { gap: 16px; }
+      .session__body { padding: 0 0 24px 52px; }
+    }
+    @media (max-width: 480px) {
+      .session__body { padding-left: 0; }
+      .quote-block__attr-row { align-items: flex-start; }
+      .btn--on-primary { width: 100%; }
     }
   </style>
 </head>
@@ -220,31 +334,123 @@
     <div class="wrap programs-hero__grid">
       <div>
         <a href="../" class="back-link">← All programs</a>
-        <span class="eyebrow" style="display:block; margin-top: 24px;">Burnout and stress prevention for adults</span>
-        <h1 class="hero__h1" style="margin-top: 18px;">MayBe Less Stress</h1>
-        <p class="body-lg" style="margin-top: 28px;">Most of us don't struggle to know what to do. We struggle because we know too much and do too little. This cycle runs against the grain of most stress advice: instead of adding another method, we take things away. First you find out where tension actually shows up for you, then you work on one thing at a time.</p>
+        <h1 class="hero__h1" style="margin-top: 24px;">MayBe Less Stress</h1>
+        <p class="programs-hero__sub">Stress only when you need it.</p>
+        <p class="body-lg programs-hero__lead">Short-term stress that shows up when you need it and passes once it's over helps you act. This program is about the stress that doesn't pass: where it comes from, what it does to your body and behaviour, and what you can do about it.</p>
+        <div class="hero__cta">
+          <a href="#sign-up" class="btn btn--primary">Sign up</a>
+          <a href="#research" class="btn btn--ghost">What the research says</a>
+        </div>
       </div>
       <div class="programs-hero__photo">
-        <img src="../../../programy/maybe-less-stress/Training.png" alt="A participant in a MayBe Less Stress session during a video call" loading="lazy">
+        <img src="../../../programy/maybe-less-stress/Training.png" alt="A participant in a MayBe Less Stress session during a video call">
       </div>
     </div>
   </header>
 
-  <!-- Who it's for -->
+  <!-- Sign up -->
+  <section id="sign-up" class="section section--white">
+    <div class="wrap">
+      <div class="section__intro section__intro--left">
+        <span class="eyebrow">Sign up</span>
+        <h2 class="h2" style="margin-top: 16px;">Choose how you want to start.</h2>
+        <p class="body-lg" style="margin-top: 16px;">Videos you can watch at your own pace, workshops in a small group, or one-on-one work. Start with what fits you right now.</p>
+      </div>
+
+      <div class="editions">
+        <article class="edition">
+          <span class="edition__badge">On YouTube</span>
+          <h3 class="edition__title">MaybeLessStress channel</h3>
+          <dl class="edition__meta">
+            <div class="edition__row"><dt>Who it's for</dt><dd>For people who first want to understand what's happening to them</dd></div>
+            <div class="edition__row"><dt>Format</dt><dd>A YouTube channel (in Polish)</dd></div>
+            <div class="edition__row"><dt>What you'll find</dt><dd>Videos on the symptoms of chronic stress in the body and in behaviour, on its causes, and on simple steps that help</dd></div>
+          </dl>
+          <a href="https://www.youtube.com/@maybelessstress" target="_blank" rel="noopener" class="btn btn--primary edition__cta">Watch the channel</a>
+        </article>
+
+        <article class="edition">
+          <span class="edition__badge">Small group</span>
+          <h3 class="edition__title">MayBe Less Stress workshops</h3>
+          <dl class="edition__meta">
+            <div class="edition__row"><dt>Who it's for</dt><dd>For people living under constant tension, at university, at work and beyond, who feel like life is happening just out of reach</dd></div>
+            <div class="edition__row"><dt>Format</dt><dd>A cycle of 8 sessions every two weeks, 1.5 hours each, in a group of up to 12</dd></div>
+            <div class="edition__row"><dt>Dates</dt><dd>You'll find them in the sign-up form</dd></div>
+          </dl>
+          <a href="https://forms.gle/HjnRNA7522VAfFRg7" target="_blank" rel="noopener" class="btn btn--primary edition__cta">Sign up for the workshops</a>
+        </article>
+
+        <article class="edition edition--open">
+          <span class="edition__badge">One-on-one</span>
+          <h3 class="edition__title">Individual coaching</h3>
+          <dl class="edition__meta">
+            <div class="edition__row"><dt>Who it's for</dt><dd>For people living with chronic stress who want to look at their situation one-on-one</dd></div>
+            <div class="edition__row"><dt>Format</dt><dd>One-on-one coaching</dd></div>
+            <div class="edition__row"><dt>First step</dt><dd>A consultation session: we get to know each other and see how we can help</dd></div>
+          </dl>
+          <a href="https://calendar.app.google/3yuEKuyomqfBeB2YA" target="_blank" rel="noopener" class="btn btn--violet edition__cta">Book a consultation</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research -->
+  <section id="research" class="section section--cream">
+    <div class="wrap">
+      <div class="section__intro section__intro--left">
+        <span class="eyebrow">What the research says</span>
+        <h2 class="h2" style="margin-top: 16px;">Work-related stress affects almost one in three people.</h2>
+      </div>
+
+      <div class="gap">
+        <div>
+          <div class="gap__row">
+            <div class="gap__head">
+              <span class="gap__value">29%</span>
+              <span class="gap__label">of workers in the EU say their work causes or worsens stress, depression or anxiety</span>
+            </div>
+            <div class="gap__track" aria-hidden="true"><div class="gap__fill" style="width: 29%;"></div></div>
+          </div>
+          <div class="gap__row">
+            <div class="gap__head">
+              <span class="gap__value">44%</span>
+              <span class="gap__label">experience severe time pressure or work overload</span>
+            </div>
+            <div class="gap__track" aria-hidden="true"><div class="gap__fill gap__fill--load" style="width: 44%;"></div></div>
+          </div>
+          <span class="source">Source: European Agency for Safety and Health at Work, <a href="https://osha.europa.eu/en/tools-and-publications/infographics/osh-pulse-2025-mental-health-work" target="_blank" rel="noopener">OSH Pulse 2025</a> (<a href="https://osha.europa.eu/en/about-eu-osha/press-room/climate-risks-1-3-workers-are-exposed-and-raise-concerns-over-health-and-safety-impacts-new-osh-pulse-survey-reveals" target="_blank" rel="noopener">press release</a>)</span>
+        </div>
+        <div class="gap__text">
+          <p>Chronic stress usually shows up first in the body and in behaviour. In nights when you can't fall asleep. In digestive problems. In thoughts about work that won't leave you alone in the evening. In outbursts you regret later.</p>
+          <p>It's easy to treat these symptoms as something separate from work, study or the situation at home. But they usually have a lot to do with them. <strong>That's why the program starts by looking at where they come from.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three levels -->
   <section class="section section--white">
-    <div class="wrap dla-kogo-grid">
-      <div class="format-box">
-        <ul class="format-box__list">
-          <li>an 8-session cycle</li>
-          <li>group of up to 12 people</li>
-          <li>sessions every two weeks</li>
-          <li>each session lasts 1.5 hours</li>
-        </ul>
+    <div class="wrap">
+      <div class="section__intro section__intro--left">
+        <span class="eyebrow">Where stress comes from</span>
+        <h2 class="h2" style="margin-top: 16px;">Stress rarely has a single source.</h2>
+        <p class="body-lg" style="margin-top: 16px;">It usually sits on three levels at once. Those levels get in each other's way, which is why it's so hard to see on your own where your tension comes from.</p>
       </div>
-      <div class="section__intro section__intro--left" style="margin-bottom: 0;">
-        <span class="eyebrow">Who it's for</span>
-        <p class="body-lg" style="margin-top: 16px;">For people living under constant tension — at university, at work and beyond — who feel like life is happening just out of reach.</p>
+      <div class="cards">
+        <div class="card card--plain">
+          <span class="card__eyebrow">You</span>
+          <p class="card__body">Your history, what you want, sometimes what you fear, and the way you react to the world around you.</p>
+        </div>
+        <div class="card card--green">
+          <span class="card__eyebrow">Your role</span>
+          <p class="card__body">What you and others expect from the role you play.</p>
+        </div>
+        <div class="card card--plain">
+          <span class="card__eyebrow">Organisation</span>
+          <p class="card__body">The system you're part of: a company, a university, but also your family and any group where you have your place and your tasks.</p>
+        </div>
       </div>
+      <p class="takeaway">You can't change overnight what's expected of your role or how your organisation works. But you do have influence over how you react to the tension they create in you. That can be learned.</p>
     </div>
   </section>
 
@@ -254,79 +460,74 @@
       <div class="quote-block">
         <p class="quote-block__text">"For years I worked in corporations in Poland, and now in Switzerland, and I know what living under constant tension feels like from the inside, not from research. I don't promise that after eight sessions your stress will disappear. It won't, and that's not the point. The point is that it stops making decisions for you."</p>
         <div class="quote-block__attr-row">
-          <img src="../../../Aga zielony.jpg" alt="Aga Skraburska" class="quote-block__avatar" loading="lazy">
-          <p class="quote-block__attr">— Aga Skraburska, Founder and Board President of The Conscious Human Foundation</p>
+          <img src="../../../Aga zielony.jpg" loading="lazy" alt="Aga Skraburska" class="quote-block__avatar">
+          <div>
+            <p class="quote-block__name">Aga Skraburska, author and facilitator of the program</p>
+            <p class="quote-block__bio">Founder and President of the Foundation's Board. For over twenty years she has worked with organisations on people development, as a coach and trainer.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Sessions -->
+  <!-- Workshop program -->
   <section class="section section--white" style="padding-bottom: 56px;">
     <div class="wrap">
       <div class="section__intro section__intro--left">
-        <span class="eyebrow">Session plan</span>
+        <span class="eyebrow">Workshop program</span>
         <h2 class="h2" style="margin-top: 16px;">Eight sessions, one cycle.</h2>
       </div>
 
-      <div class="session">
-        <span class="session__num">01</span>
-        <div>
-          <h3 class="session__title">Where your stress actually comes from</h3>
+      <details class="session" open>
+        <summary><span class="session__num">01</span><h3 class="session__title">Where your stress actually comes from</h3></summary>
+        <div class="session__body">
           <p class="session__desc">When tension runs high, everything looks equally urgent. This session has one goal: finding out where your stress really lives. Very often, what wears us down most isn't what we talk about most. So we start by understanding, not solving, and you choose one area to focus on for the whole cycle.</p>
         </div>
-      </div>
-      <div class="session">
-        <span class="session__num">02</span>
-        <div>
-          <h3 class="session__title">What the body is telling you</h3>
+      </details>
+      <details class="session">
+        <summary><span class="session__num">02</span><h3 class="session__title">What the body is telling you</h3></summary>
+        <div class="session__body">
           <p class="session__desc">The body usually knows first. Tight shoulders, a clenched jaw, shallow breathing. We often miss these signals for years because we're too busy. In this session you learn to recognise your own signals and pick up a few simple exercises that help ease stress in the middle of a busy day, not just in a calm setting.</p>
         </div>
-      </div>
-      <div class="session">
-        <span class="session__num">03</span>
-        <div>
-          <h3 class="session__title">Sleep and energy</h3>
+      </details>
+      <details class="session">
+        <summary><span class="session__num">03</span><h3 class="session__title">Sleep and energy</h3></summary>
+        <div class="session__body">
           <p class="session__desc">Trouble falling asleep, waking up at night, tiredness despite enough hours in bed, an afternoon energy crash. We talk about what genuinely supports rest: daily rhythm, light, winding down in the evening, breaks that actually recharge you. No miracle methods — ordinary things, done consistently.</p>
         </div>
-      </div>
-      <div class="session">
-        <span class="session__num">04</span>
-        <div>
-          <h3 class="session__title">When your head won't slow down</h3>
+      </details>
+      <details class="session">
+        <summary><span class="session__num">04</span><h3 class="session__title">When your head won't slow down</h3></summary>
+        <div class="session__body">
           <p class="session__desc">Thoughts keep coming back in the evening and on weekends. That's not a willpower problem, it's an overload problem. In this session we practise the one skill that makes the biggest difference and is also the hardest: subtracting. Telling the important apart from the merely loud. For many people, this is the most uncomfortable session in the whole cycle.</p>
         </div>
-      </div>
-      <div class="session">
-        <span class="session__num">05</span>
-        <div>
-          <h3 class="session__title">Life on autopilot</h3>
+      </details>
+      <details class="session">
+        <summary><span class="session__num">05</span><h3 class="session__title">Life on autopilot</h3></summary>
+        <div class="session__body">
           <p class="session__desc">Days start to blur together, and you're carrying out a plan you never consciously chose. We pause and look at where your time and energy actually go — not to overturn everything, but to put you back in charge of the decisions.</p>
         </div>
-      </div>
-      <div class="session">
-        <span class="session__num">06</span>
-        <div>
-          <h3 class="session__title">Boundaries and hard conversations</h3>
+      </details>
+      <details class="session">
+        <summary><span class="session__num">06</span><h3 class="session__title">Boundaries and hard conversations</h3></summary>
+        <div class="session__body">
           <p class="session__desc">Many of us say "yes" while thinking "no," or react too aggressively, and carry the resulting tiredness and resentment around with us. In this session we work on specifics: how to say no without over-explaining, how to start a conversation you've been putting off for months, and how to stay out of other people's tension. We practise on your real situations, not textbook examples.</p>
         </div>
-      </div>
-      <div class="session">
-        <span class="session__num">07</span>
-        <div>
-          <h3 class="session__title">Understanding your own reactions</h3>
+      </details>
+      <details class="session">
+        <summary><span class="session__num">07</span><h3 class="session__title">Understanding your own reactions</h3></summary>
+        <div class="session__body">
           <p class="session__desc">Sometimes we react more strongly than we'd like, or pull back exactly where it matters most to us. It's worth seeing what's underneath that — not to look for someone to blame in the past, and not to become a prisoner of your own history, but to have a real choice today. We go as deep as you want to, and not a step further.</p>
         </div>
-      </div>
-      <div class="session">
-        <span class="session__num">08</span>
-        <div>
-          <h3 class="session__title">Your plan and your group</h3>
-          <p class="session__desc">Knowledge alone doesn't change much. You put together a simple everyday plan — a few steps you'll actually follow through on. We're also honest about something visible in every group: change tends to fade when you're on your own, and holds far better when you're surrounded by people moving in the same direction. That's not a guarantee. It's the best thing I know.</p>
+      </details>
+      <details class="session">
+        <summary><span class="session__num">08</span><h3 class="session__title">Your plan and your group</h3></summary>
+        <div class="session__body">
+          <p class="session__desc">Knowledge alone doesn't change much. You put together a simple everyday plan — a few steps you'll actually follow through on. We're also honest about something visible in every group: change tends to fade when you're on your own, and holds far better when you're surrounded by people moving in the same direction. That's not a guarantee. It's the best thing we know.</p>
         </div>
-      </div>
+      </details>
 
-      <p class="disclaimer">These workshops are educational and developmental in nature and are not a substitute for medical consultation or therapy.</p>
+      <p class="disclaimer">The workshops and coaching are educational and developmental in nature and are not a substitute for medical consultation or therapy. If something is happening with your body and it worries you, the first step is to see a doctor.</p>
     </div>
   </section>
 
@@ -334,8 +535,8 @@
   <div class="contact-band">
     <div class="contact-band__inner">
       <h2 class="contact-band__h2">Create space for less stress.</h2>
-      <p class="contact-band__sub">Write to us and ask about the next MayBe Less Stress cycle.</p>
-      <a href="mailto:info@conscioushuman.pl" class="btn btn--primary">Ask about the next round →</a>
+      <a href="#sign-up" class="btn btn--on-primary">Choose how you want to start →</a>
+      <p class="contact-band__mail">Questions? <a href="mailto:info@conscioushuman.pl">info@conscioushuman.pl</a></p>
     </div>
   </div>
 
